@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c6wxft03e4t0m"]
+[gd_scene load_steps=3 format=3 uid="uid://c6wxft03e4t0m"]
 
 [ext_resource type="PackedScene" uid="uid://c3dmp6ktllqnl" path="res://scene/UI/ui.tscn" id="1_g82vk"]
+[ext_resource type="Script" path="res://script/entity/buildutils/BuildUtils.gd" id="2_83224"]
 
 [node name="Level" type="Node"]
 
@@ -13,5 +14,6 @@
 [node name="BuildingLayer" type="TileMapLayer" parent="EntityManager"]
 
 [node name="BuildUtils" type="Node" parent="EntityManager"]
+script = ExtResource("2_83224")
 
 [node name="ResourceUtils" type="Node" parent="EntityManager"]

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BuildingData" load_steps=2 format=3 uid="uid://baa6wslwphhnu"]
+
+[ext_resource type="Script" path="res://script/resource/building/BuildingData.gd" id="1_cu8vw"]
+
+[resource]
+script = ExtResource("1_cu8vw")
+building_name = "school"
+cost = {}
+size = Vector2i(0, 0)
+effect = NodePath("")
