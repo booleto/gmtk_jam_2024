@@ -13,3 +13,5 @@
 [node name="BuildingLayer" type="TileMapLayer" parent="EntityManager"]
 
 [node name="BuildUtils" type="Node" parent="EntityManager"]
+
+[node name="ResourceUtils" type="Node" parent="EntityManager"]
