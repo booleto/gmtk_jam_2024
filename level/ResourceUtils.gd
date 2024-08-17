@@ -20,3 +20,10 @@ func able_to_fulfill(request: CityResource) -> bool:
 			return false
 
 	return true
+
+func try_fulfill(request: CityResource) -> bool:
+	if able_to_fulfill(request) == true:
+		resource.apply(request)
+		return true
+	else:
+		return false
