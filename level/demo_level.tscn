@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c6wxft03e4t0m"]
+[gd_scene load_steps=3 format=3 uid="uid://c6wxft03e4t0m"]
 
 [ext_resource type="PackedScene" uid="uid://c3dmp6ktllqnl" path="res://scene/UI/ui.tscn" id="1_g82vk"]
+[ext_resource type="Script" path="res://level/ResourceUtils.gd" id="2_l86aw"]
 
 [node name="Level" type="Node"]
 
@@ -15,3 +16,4 @@
 [node name="BuildUtils" type="Node" parent="EntityManager"]
 
 [node name="ResourceUtils" type="Node" parent="EntityManager"]
+script = ExtResource("2_l86aw")
