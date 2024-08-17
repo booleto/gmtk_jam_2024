@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="BuildingData" load_steps=2 format=3 uid="uid://bp6g5fticr3s1"]
+[gd_resource type="Resource" script_class="BuildingData" load_steps=3 format=3 uid="uid://bp6g5fticr3s1"]
 
+[ext_resource type="PackedScene" uid="uid://bhnu6w1omsbwc" path="res://scene/entity/Market.tscn" id="1_6a0dn"]
 [ext_resource type="Script" path="res://script/resource/building/BuildingData.gd" id="1_705in"]
 
 [resource]
@@ -7,4 +8,4 @@ script = ExtResource("1_705in")
 building_name = "market"
 cost = {}
 size = Vector2i(0, 0)
-effect = NodePath("")
+scene = ExtResource("1_6a0dn")

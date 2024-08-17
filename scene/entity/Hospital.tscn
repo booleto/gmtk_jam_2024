@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://6yudt4dum4lg"]
+
+[ext_resource type="Script" path="res://script/entity/building/Building.gd" id="1_aeg5t"]
+
+[node name="Hospital" type="Node2D"]
+script = ExtResource("1_aeg5t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhnu6w1omsbwc"]
+
+[ext_resource type="Script" path="res://script/entity/building/Building.gd" id="1_bo0e5"]
+
+[node name="Market" type="Node2D"]
+script = ExtResource("1_bo0e5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
