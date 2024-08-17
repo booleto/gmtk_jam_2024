@@ -12,7 +12,6 @@ var building_placement : Array = []
 
 func _ready() -> void:
 	cell_size = tile_layer.tile_set.tile_size
-	#cell_size = Vector2(10, 10)
 	grid_bounds = Vector2(10, 10)
 	
 	for i in range(grid_bounds.x):
@@ -101,7 +100,3 @@ func print_placement() -> void:
 			var tile = 1 if building_placement[i][j] != null else 0
 			line = line + str(tile)
 		print(line)
-
-
-func highlight_cell(pos : Vector2i):
-	pass
