@@ -12,14 +12,11 @@ func _resource_as_array(res: CityResource) -> PackedInt32Array:
 	return [res.intellect, res.population, res.mood, res.health, res.money]
 
 ## Pass a CityResource and return a bool whether it is able to fulfill the request
-## If it returns true, the actual resource will be subtracted
-func try_request_resources(request: CityResource) -> bool:
+func able_to_fulfill(request: CityResource) -> bool:
 	var res_arr = _resource_as_array(resource)
 	var req_arr = _resource_as_array(request)
 	for i in range(res_arr):
 		if res_arr[i] - req_arr[i] < 0:
 			return false
 
-	for i in range(res_arr):
-		res_arr[i] -= req_arr[i]
 	return true
