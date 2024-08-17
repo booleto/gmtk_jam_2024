@@ -30,7 +30,7 @@ func _ready() -> void:
 
 
 func place_building(position : Vector2, building_data : BuildingData) -> void:
-	if not is_placement_valid(position, building_data.size):
+	if not is_placement_valid(position, building_data.size): # and resource can fulfill the requirements
 		return
 	var new_building : Building = building_data.scene.instantiate()
 	new_building.building_data = building_data

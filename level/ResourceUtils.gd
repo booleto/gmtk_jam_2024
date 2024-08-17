@@ -4,8 +4,8 @@ var resource: CityResource
 
 ## Change the population by an amount (positive or negative)
 ## Warning: this can make the population went negative
-func change_population_by(amount: int):
-	resource.population += amount
+#func change_population_by(amount: int):
+	#resource.population += amount
 
 ## Internal use, don't use it or perish
 func _resource_as_array(res: CityResource) -> PackedInt32Array:
@@ -15,15 +15,15 @@ func _resource_as_array(res: CityResource) -> PackedInt32Array:
 func able_to_fulfill(request: CityResource) -> bool:
 	var res_arr = _resource_as_array(resource)
 	var req_arr = _resource_as_array(request)
-	for i in range(res_arr):
+	for i in len(res_arr):
 		if res_arr[i] - req_arr[i] < 0:
 			return false
 
 	return true
 
-func try_fulfill(request: CityResource) -> bool:
+func fulfill(request: CityResource) -> bool:
 	if able_to_fulfill(request) == true:
-		resource.apply(request)
+		resource.fulfill(request)
 		return true
 	else:
 		return false
