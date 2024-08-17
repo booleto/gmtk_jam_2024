@@ -1,11 +1,10 @@
 extends Node
 
+@export
+var building_data : Resource
+var building_effect : BuildingEffect
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+signal emit_effect(building_effect)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func on_turn_end():
+	emit_effect.emit()

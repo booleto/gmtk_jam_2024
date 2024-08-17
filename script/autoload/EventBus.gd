@@ -8,4 +8,7 @@ signal pause_event(is_paused : bool)
 
 # Game resource change
 signal money_changed(new_amount : int)
-signal citizen_changed(new_amount : int)
+signal citizen_number_changed(new_amount : int)
+signal citizen_iq_changed(new_amount : int)
+signal citizen_health_changed(new_amount : int)
+signal citizen_mood_changed(new_amount : int)
