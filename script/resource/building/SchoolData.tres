@@ -10,5 +10,5 @@ script = ExtResource("1_cu8vw")
 building_name = "school"
 sprite = ExtResource("3_4e176")
 cost = ExtResource("1_w4h82")
-size = Vector2i(1, 2)
+size = Vector2i(2, 1)
 scene = ExtResource("1_v2q7u")

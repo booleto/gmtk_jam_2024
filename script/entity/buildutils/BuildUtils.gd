@@ -19,18 +19,22 @@ func _ready() -> void:
 		for j in range(grid_bounds.y):
 			building_placement[i].append(null)
 			
-	print(is_placement_valid(Vector2i(9, 0), Vector2i(3, 3)))
+	#print(is_placement_valid(Vector2i(9, 0), Vector2i(3, 3)))
 	#place_building_test(Vector2i(5, 5), Vector2i(1, 2))
-	await get_parent().ready
-	place_building(Vector2i(1, 1), test_building)
-	print_placement()
-	destroy_building(Vector2i(1, 1))
-	print_placement()
+	#await get_parent().ready
+	#place_building(Vector2i(1, 1), test_building)
+	#print_placement()
+	#destroy_building(Vector2i(1, 1))
+	#print_placement()
 	
+
+func place_building_global(global_pos : Vector2, building_data : BuildingData) -> void:
+	var map_pos = tile_layer.local_to_map(global_pos)
+	place_building(map_pos, building_data)
 
 
 func place_building(position : Vector2, building_data : BuildingData) -> void:
-	if not is_placement_valid(position, building_data.size): # and resource can fulfill the requirements
+	if not is_placement_valid(position, building_data.size):
 		return
 	var new_building : Building = building_data.scene.instantiate()
 	new_building.building_data = building_data
@@ -100,3 +104,7 @@ func print_placement() -> void:
 			var tile = 1 if building_placement[i][j] != null else 0
 			line = line + str(tile)
 		print(line)
+
+
+func highlight_cell(pos : Vector2i):
+	pass

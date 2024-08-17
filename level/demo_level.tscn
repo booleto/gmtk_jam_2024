@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6wxft03e4t0m"]
+[gd_scene load_steps=9 format=3 uid="uid://c6wxft03e4t0m"]
 
 [ext_resource type="PackedScene" uid="uid://c3dmp6ktllqnl" path="res://scene/UI/ui.tscn" id="1_g82vk"]
 [ext_resource type="Script" path="res://script/entity/buildutils/BuildUtils.gd" id="2_83224"]
 [ext_resource type="Script" path="res://level/ResourceUtils.gd" id="2_l86aw"]
 [ext_resource type="Script" path="res://script/entity/entitymanager/EntityManager.gd" id="2_p2aqo"]
 [ext_resource type="Resource" uid="uid://baa6wslwphhnu" path="res://script/resource/building/SchoolData.tres" id="3_ohqkt"]
+[ext_resource type="Script" path="res://script/component/playerinput/PlayerInput.gd" id="6_i0wp4"]
+[ext_resource type="Resource" uid="uid://bp6g5fticr3s1" path="res://script/resource/building/MarketData.tres" id="7_f1l5f"]
 
 [sub_resource type="TileSet" id="TileSet_ej2uc"]
 tile_size = Vector2i(32, 32)
@@ -27,7 +29,14 @@ test_building = ExtResource("3_ohqkt")
 tile_layer = NodePath("../BackgroundLayer")
 grid_bounds = Vector2(10, 10)
 
-[node name="ResourceUtils" type="Node" parent="EntityManager"]
+[node name="ResourceUtils" type="Node" parent="EntityManager" node_paths=PackedStringArray("build_utils")]
 script = ExtResource("2_l86aw")
+build_utils = NodePath("../BuildUtils")
+
+[node name="PlayerInput" type="Node2D" parent="EntityManager" node_paths=PackedStringArray("build_utils")]
+script = ExtResource("6_i0wp4")
+build_utils = NodePath("../BuildUtils")
+school = ExtResource("3_ohqkt")
+market = ExtResource("7_f1l5f")
 
 [connection signal="building_built" from="EntityManager/BuildUtils" to="EntityManager" method="_on_build_utils_building_built"]
