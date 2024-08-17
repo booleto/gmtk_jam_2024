@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="BuildingData" load_steps=4 format=3 uid="uid://38t1difsep1y"]
+[gd_resource type="Resource" script_class="BuildingData" load_steps=5 format=3 uid="uid://38t1difsep1y"]
 
 [ext_resource type="PackedScene" uid="uid://bf8fbet1x70gp" path="res://scene/entity/House.tscn" id="1_gduu1"]
 [ext_resource type="Script" path="res://script/resource/building/BuildingData.gd" id="1_gjtp8"]
 [ext_resource type="Resource" uid="uid://c3gy2lj48rmt4" path="res://script/resource/cityresource/HouseCost.tres" id="1_jb638"]
+[ext_resource type="Texture2D" uid="uid://dbsq1p40a8so1" path="res://Assets/Sprites/House.png" id="4_xxxo3"]
 
 [resource]
 script = ExtResource("1_gjtp8")
 building_name = "house"
+sprite = ExtResource("4_xxxo3")
 cost = ExtResource("1_jb638")
-size = Vector2i(0, 0)
+size = Vector2i(1, 1)
 scene = ExtResource("1_gduu1")

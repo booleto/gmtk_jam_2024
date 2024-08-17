@@ -3,6 +3,9 @@ extends Node2D
 @export var build_utils : BuildUtils
 @export var school : BuildingData
 @export var market : BuildingData
+@export var company : BuildingData
+@export var hospital : BuildingData
+@export var house : BuildingData
 
 var entity_manager : EntityManager
 
@@ -28,6 +31,23 @@ func _process(delta: float) -> void:
 		#build_utils.print_placement()
 		trigger_turn_end()
 	
+	if Input.is_action_just_pressed("card3"):
+		print("build test 3")
+		build_utils.place_building_global(mouse, house)
+		#build_utils.print_placement()
+		trigger_turn_end()
+	
+	if Input.is_action_just_pressed("card4"):
+		print("build test 4")
+		build_utils.place_building_global(mouse, company)
+		#build_utils.print_placement()
+		trigger_turn_end()
+	
+	if Input.is_action_just_pressed("card5"):
+		print("build test 5")
+		build_utils.place_building_global(mouse, hospital)
+		#build_utils.print_placement()
+		trigger_turn_end()
 
 func trigger_turn_end():
 	print("end turn")

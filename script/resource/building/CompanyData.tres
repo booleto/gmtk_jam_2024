@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="BuildingData" load_steps=4 format=3 uid="uid://ir6vk1und44s"]
+[gd_resource type="Resource" script_class="BuildingData" load_steps=5 format=3 uid="uid://ir6vk1und44s"]
 
 [ext_resource type="Resource" uid="uid://dhh2q8q4wono5" path="res://script/resource/cityresource/CompanyCost.tres" id="1_jiuei"]
 [ext_resource type="Script" path="res://script/resource/building/BuildingData.gd" id="1_x6l2v"]
 [ext_resource type="PackedScene" uid="uid://cu8ggfwahuca" path="res://scene/entity/Company.tscn" id="1_xeeb8"]
+[ext_resource type="Texture2D" uid="uid://bkjth8s6b151r" path="res://Assets/Sprites/Marketbig.png" id="4_1fv61"]
 
 [resource]
 script = ExtResource("1_x6l2v")
 building_name = "company"
+sprite = ExtResource("4_1fv61")
 cost = ExtResource("1_jiuei")
-size = Vector2i(0, 0)
+size = Vector2i(2, 1)
 scene = ExtResource("1_xeeb8")

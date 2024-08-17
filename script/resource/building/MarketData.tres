@@ -3,12 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://bhnu6w1omsbwc" path="res://scene/entity/Market.tscn" id="1_6a0dn"]
 [ext_resource type="Script" path="res://script/resource/building/BuildingData.gd" id="1_705in"]
 [ext_resource type="Resource" uid="uid://5s03ieorrs3m" path="res://script/resource/cityresource/MarketCost.tres" id="1_m06md"]
-[ext_resource type="Texture2D" uid="uid://ctr66cgc3qhn" path="res://Assets/Sprites/Market.png" id="3_qmaw7"]
+[ext_resource type="Texture2D" uid="uid://bwogvwxbdw3an" path="res://Assets/Sprites/Hospital.png" id="4_6keah"]
 
 [resource]
 script = ExtResource("1_705in")
 building_name = "market"
-sprite = ExtResource("3_qmaw7")
+sprite = ExtResource("4_6keah")
 cost = ExtResource("1_m06md")
 size = Vector2i(1, 1)
 scene = ExtResource("1_6a0dn")

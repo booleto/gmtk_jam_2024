@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c6wxft03e4t0m"]
+[gd_scene load_steps=12 format=3 uid="uid://c6wxft03e4t0m"]
 
 [ext_resource type="PackedScene" uid="uid://c3dmp6ktllqnl" path="res://scene/UI/ui.tscn" id="1_g82vk"]
 [ext_resource type="Script" path="res://script/entity/buildutils/BuildUtils.gd" id="2_83224"]
@@ -7,6 +7,9 @@
 [ext_resource type="Resource" uid="uid://baa6wslwphhnu" path="res://script/resource/building/SchoolData.tres" id="3_ohqkt"]
 [ext_resource type="Script" path="res://script/component/playerinput/PlayerInput.gd" id="6_i0wp4"]
 [ext_resource type="Resource" uid="uid://bp6g5fticr3s1" path="res://script/resource/building/MarketData.tres" id="7_f1l5f"]
+[ext_resource type="Resource" uid="uid://ir6vk1und44s" path="res://script/resource/building/CompanyData.tres" id="8_c0ate"]
+[ext_resource type="Resource" uid="uid://b2xvnmt8jlpoc" path="res://script/resource/building/HospitalData.tres" id="9_ydtp5"]
+[ext_resource type="Resource" uid="uid://38t1difsep1y" path="res://script/resource/building/HouseData.tres" id="10_4q351"]
 
 [sub_resource type="TileSet" id="TileSet_ej2uc"]
 tile_size = Vector2i(32, 32)
@@ -38,5 +41,12 @@ script = ExtResource("6_i0wp4")
 build_utils = NodePath("../BuildUtils")
 school = ExtResource("3_ohqkt")
 market = ExtResource("7_f1l5f")
+company = ExtResource("8_c0ate")
+hospital = ExtResource("9_ydtp5")
+house = ExtResource("10_4q351")
+
+[node name="Camera2D" type="Camera2D" parent="EntityManager"]
+position = Vector2(285, 160)
+zoom = Vector2(2, 2)
 
 [connection signal="building_built" from="EntityManager/BuildUtils" to="EntityManager" method="_on_build_utils_building_built"]
