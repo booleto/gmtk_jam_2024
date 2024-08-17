@@ -3,6 +3,7 @@ class_name BuildUtils
 
 signal building_built(building: Building)
 
+@export var test_building : BuildingData
 @export var tile_layer : TileMapLayer
 @export var grid_bounds : Vector2
 
@@ -10,7 +11,7 @@ var cell_size : Vector2
 var building_placement : Array = []
 
 func _ready() -> void:
-	#cell_size = tile_layer.tile_set.tile_size
+	cell_size = tile_layer.tile_set.tile_size
 	#cell_size = Vector2(10, 10)
 	grid_bounds = Vector2(10, 10)
 	
@@ -19,9 +20,13 @@ func _ready() -> void:
 		for j in range(grid_bounds.y):
 			building_placement[i].append(null)
 			
-	#print(is_placement_valid(Vector2i(9, 0), Vector2i(3, 3)))
-	#place_building_test(Vector2i(5, 5), Vector2i(4, 4))
-	#print_placement()
+	print(is_placement_valid(Vector2i(9, 0), Vector2i(3, 3)))
+	#place_building_test(Vector2i(5, 5), Vector2i(1, 2))
+	await get_parent().ready
+	place_building(Vector2i(1, 1), test_building)
+	print_placement()
+	destroy_building(Vector2i(1, 1))
+	print_placement()
 	
 
 
@@ -30,7 +35,9 @@ func place_building(position : Vector2, building_data : BuildingData) -> void:
 		return
 	var new_building : Building = building_data.scene.instantiate()
 	new_building.building_data = building_data
+	new_building.grid_position = position
 	add_sibling(new_building)
+	new_building.position = position * cell_size.x
 	var size: Vector2i = building_data.size
 	
 	for i in range(size.x):
@@ -94,3 +101,7 @@ func print_placement() -> void:
 			var tile = 1 if building_placement[i][j] != null else 0
 			line = line + str(tile)
 		print(line)
+
+
+func highlight_cell(pos : Vector2i):
+	pass

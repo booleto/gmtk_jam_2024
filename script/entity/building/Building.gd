@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 class_name Building
 
 signal apply_effect(effect: BuildingEffect)

@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://bhnu6w1omsbwc"]
+[gd_scene load_steps=3 format=3 uid="uid://bhnu6w1omsbwc"]
 
 [ext_resource type="Script" path="res://script/entity/building/Building.gd" id="1_bo0e5"]
+[ext_resource type="Texture2D" uid="uid://ctr66cgc3qhn" path="res://Assets/Sprites/Market.png" id="2_7pykw"]
 
 [node name="Market" type="Node2D"]
 script = ExtResource("1_bo0e5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_7pykw")
+centered = false

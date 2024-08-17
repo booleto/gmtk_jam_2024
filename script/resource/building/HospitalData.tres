@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="BuildingData" load_steps=3 format=3 uid="uid://b2xvnmt8jlpoc"]
 
-[ext_resource type="PackedScene" uid="uid://6yudt4dum4lg" path="res://scene/entity/Hospital.tscn" id="1_0wffr"]
+[ext_resource type="PackedScene" uid="uid://1b5yrvdifmd7" path="res://scene/entity/Hospital.tscn" id="1_0wffr"]
 [ext_resource type="Script" path="res://script/resource/building/BuildingData.gd" id="1_l83wb"]
 
 [resource]

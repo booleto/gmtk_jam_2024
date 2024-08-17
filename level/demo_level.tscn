@@ -1,21 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6wxft03e4t0m"]
+[gd_scene load_steps=7 format=3 uid="uid://c6wxft03e4t0m"]
 
 [ext_resource type="PackedScene" uid="uid://c3dmp6ktllqnl" path="res://scene/UI/ui.tscn" id="1_g82vk"]
 [ext_resource type="Script" path="res://script/entity/buildutils/BuildUtils.gd" id="2_83224"]
 [ext_resource type="Script" path="res://level/ResourceUtils.gd" id="2_l86aw"]
+[ext_resource type="Script" path="res://script/entity/entitymanager/EntityManager.gd" id="2_p2aqo"]
+[ext_resource type="Resource" uid="uid://baa6wslwphhnu" path="res://script/resource/building/SchoolData.tres" id="3_ohqkt"]
+
+[sub_resource type="TileSet" id="TileSet_ej2uc"]
+tile_size = Vector2i(32, 32)
 
 [node name="Level" type="Node"]
 
 [node name="UI" parent="." instance=ExtResource("1_g82vk")]
 
 [node name="EntityManager" type="Node2D" parent="."]
+script = ExtResource("2_p2aqo")
 
 [node name="BackgroundLayer" type="TileMapLayer" parent="EntityManager"]
+tile_set = SubResource("TileSet_ej2uc")
 
 [node name="BuildingLayer" type="TileMapLayer" parent="EntityManager"]
 
-[node name="BuildUtils" type="Node" parent="EntityManager"]
+[node name="BuildUtils" type="Node" parent="EntityManager" node_paths=PackedStringArray("tile_layer")]
 script = ExtResource("2_83224")
+test_building = ExtResource("3_ohqkt")
+tile_layer = NodePath("../BackgroundLayer")
+grid_bounds = Vector2(10, 10)
 
 [node name="ResourceUtils" type="Node" parent="EntityManager"]
 script = ExtResource("2_l86aw")
+
+[connection signal="building_built" from="EntityManager/BuildUtils" to="EntityManager" method="_on_build_utils_building_built"]
