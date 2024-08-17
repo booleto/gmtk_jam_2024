@@ -8,4 +8,4 @@ class_name BuildingData
 @export var size : Vector2i
 @export var scene : PackedScene
 
-@export var effect : NodePath
+@export var effect : BuildingEffect
