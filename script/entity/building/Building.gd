@@ -1,7 +1,7 @@
 extends Node
 class_name Building
 
-signal emit_effect(building_effect)
+signal apply_effect(effect: BuildingEffect)
 
 @onready var sprite : Sprite2D = get_node("Sprite2D")
 @export var building_data : BuildingData
@@ -22,4 +22,4 @@ func on_destroy():
 	
 
 func on_turn_end():
-	emit_effect.emit(building_effect)
+	apply_effect.emit(building_effect)
