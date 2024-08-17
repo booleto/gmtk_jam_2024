@@ -15,9 +15,9 @@ func _init(intellect = 0, population = 0, mood = 100, health = 100, money = 999)
 	self.health = health
 	self.money = money
 
-func apply(request: CityResource):
-	self.intellect += request.intellect
-	self.population += request.population
-	self.mood += request.mood
-	self.health += request.health
-	self.money += request.money
+func fulfill(request: CityResource):
+	self.intellect -= request.intellect
+	self.population -= request.population
+	self.mood -= request.mood
+	self.health -= request.health
+	self.money -= request.money
