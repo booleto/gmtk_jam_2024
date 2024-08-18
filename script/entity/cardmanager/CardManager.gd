@@ -4,6 +4,7 @@ class_name CardManager
 signal deck_shuffled
 signal card_played(card: Card)
 signal card_drawn(card: Card)
+signal card_init(hand : Array[Card])
 
 @export var deck_starters : Array[int]
 @export var hand_limit : int
@@ -35,7 +36,7 @@ func initialize_deck(): # TODO: remove placeholder
 	deck.shuffle()
 	fill_hand()
 	print_hand()
-	
+	card_init.emit(hand)
 	prints(deck.map(func(c: Card): return c.card_name))
 
 
