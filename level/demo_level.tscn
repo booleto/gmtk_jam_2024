@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=4 uid="uid://c6wxft03e4t0m"]
+[gd_scene load_steps=13 format=4 uid="uid://c6wxft03e4t0m"]
 
 [ext_resource type="PackedScene" uid="uid://c3dmp6ktllqnl" path="res://scene/UI/ui.tscn" id="1_g82vk"]
 [ext_resource type="Script" path="res://script/entity/buildutils/BuildUtils.gd" id="2_83224"]
 [ext_resource type="Script" path="res://level/ResourceUtils.gd" id="2_l86aw"]
 [ext_resource type="Script" path="res://script/entity/entitymanager/EntityManager.gd" id="2_p2aqo"]
+[ext_resource type="Script" path="res://level/debug_building_layer.gd" id="3_no30c"]
 [ext_resource type="Resource" uid="uid://baa6wslwphhnu" path="res://script/resource/building/SchoolData.tres" id="3_ohqkt"]
 [ext_resource type="TileSet" uid="uid://dsnnh7f4ckv0w" path="res://scene/tileset/grasstree.tres" id="3_qmqw6"]
 [ext_resource type="Script" path="res://script/component/playerinput/PlayerInput.gd" id="6_i0wp4"]
@@ -25,12 +26,12 @@ tile_map_data = PackedByteArray("AAAAAAAAAwAJAAAAAAAAAAEAAwAJAAEAAAABAAAAAwAIAAA
 tile_set = ExtResource("3_qmqw6")
 
 [node name="BuildingLayer" type="TileMapLayer" parent="EntityManager"]
+script = ExtResource("3_no30c")
 
 [node name="BuildUtils" type="Node" parent="EntityManager" node_paths=PackedStringArray("tile_layer")]
 script = ExtResource("2_83224")
 test_building = ExtResource("3_ohqkt")
 tile_layer = NodePath("../BackgroundLayer")
-grid_bounds = Vector2(10, 10)
 
 [node name="ResourceUtils" type="Node" parent="EntityManager" node_paths=PackedStringArray("build_utils")]
 script = ExtResource("2_l86aw")

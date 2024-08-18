@@ -31,7 +31,11 @@ func able_to_fulfill(request: CityResource) -> bool:
 
 func try_fulfill(request: CityResource) -> bool:
 	if able_to_fulfill(request) == true:
-		resource.apply(request)
+		resource.intellect -= request.intellect
+		resource.population -= request.population
+		resource.mood -= request.mood
+		resource.health -= request.health
+		resource.money -= request.money
 		return true
 	else:
 		return false
