@@ -1,0 +1,20 @@
+@startuml signals
+
+start
+:Player selects card;
+if (ResourceUtils.able_to_fulfill() returns) then(false)
+    :Do not build this;
+    stop
+endif
+
+:Player choose tile to build;
+if (BuildingUtils.is_placement_valid() returns) then(false)
+    :Do not build this;
+    stop
+endif
+
+:Build this;
+:Subtract resource;
+
+end
+@enduml

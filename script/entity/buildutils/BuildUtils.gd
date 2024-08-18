@@ -5,14 +5,14 @@ signal building_built(building: Building)
 
 @export var test_building : BuildingData
 @export var tile_layer : TileMapLayer
-@export var grid_bounds : Vector2
+@export var grid_bounds : Vector2i
 
 var cell_size : Vector2
-var building_placement : Array = []
+var building_placement : Array[Array] = []
 
 func _ready() -> void:
 	cell_size = tile_layer.tile_set.tile_size
-	grid_bounds = Vector2(10, 10)
+	grid_bounds = Vector2i(10, 10)
 	
 	for i in range(grid_bounds.x):
 		building_placement.append([])
@@ -26,7 +26,6 @@ func _ready() -> void:
 	#print_placement()
 	#destroy_building(Vector2i(1, 1))
 	#print_placement()
-	
 
 func place_building_global(global_pos : Vector2, building_data : BuildingData) -> void:
 	var map_pos = tile_layer.local_to_map(global_pos)
@@ -74,13 +73,10 @@ func destroy_building(pos : Vector2) -> void:
 	
 
 func is_position_available(pos : Vector2i) -> bool:
-	if not (0 <= pos.x and pos.x < grid_bounds.x):
+	if not ((0 <= pos.x and pos.x < grid_bounds.x) and (0 <= pos.y and pos.y < grid_bounds.y)):
 		return false
-	if not (0 <= pos.y and pos.y < grid_bounds.y):
-		return false
-	if building_placement[pos.x][pos.y] == null:
-		return true
-	return false
+		
+	return building_placement[pos.x][pos.y] == null
 
 
 func is_placement_valid(pos: Vector2i, size: Vector2i) -> bool:
