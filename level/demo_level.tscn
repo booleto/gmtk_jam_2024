@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://c6wxft03e4t0m"]
+[gd_scene load_steps=12 format=4 uid="uid://c6wxft03e4t0m"]
 
 [ext_resource type="PackedScene" uid="uid://c3dmp6ktllqnl" path="res://scene/UI/ui.tscn" id="1_g82vk"]
 [ext_resource type="Script" path="res://script/entity/buildutils/BuildUtils.gd" id="2_83224"]
@@ -9,6 +9,7 @@
 [ext_resource type="TileSet" uid="uid://dsnnh7f4ckv0w" path="res://scene/tileset/grasstree.tres" id="3_qmqw6"]
 [ext_resource type="Script" path="res://script/component/playerinput/PlayerInput.gd" id="6_i0wp4"]
 [ext_resource type="Script" path="res://script/resource/CityResource.gd" id="7_dqgsa"]
+[ext_resource type="Script" path="res://script/entity/cardmanager/CardManager.gd" id="10_0c5ni"]
 
 [sub_resource type="Resource" id="Resource_fb7xx"]
 script = ExtResource("7_dqgsa")
@@ -52,5 +53,7 @@ position = Vector2(212, 114)
 zoom = Vector2(2, 2)
 
 [node name="CardManager" type="Node" parent="EntityManager"]
+script = ExtResource("10_0c5ni")
+deck_starters = Array[int]([10, 10, 10, 10, 10])
 
 [connection signal="building_built" from="EntityManager/BuildUtils" to="EntityManager" method="_on_build_utils_building_built"]

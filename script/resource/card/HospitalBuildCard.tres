@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Card" load_steps=5 format=3 uid="uid://dvkoko088k15s"]
+
+[ext_resource type="Script" path="res://script/resource/card/Card.gd" id="1_6bg04"]
+[ext_resource type="Resource" uid="uid://b2xvnmt8jlpoc" path="res://script/resource/building/HospitalData.tres" id="1_8tj8j"]
+[ext_resource type="Script" path="res://script/resource/card/cardeffect/BuildEffect.gd" id="2_2vu5m"]
+
+[sub_resource type="Resource" id="Resource_mafgi"]
+script = ExtResource("2_2vu5m")
+building = ExtResource("1_8tj8j")
+
+[resource]
+script = ExtResource("1_6bg04")
+card_name = "Build Hospital"
+energy_cost = 0
+type = 0
+effect = SubResource("Resource_mafgi")

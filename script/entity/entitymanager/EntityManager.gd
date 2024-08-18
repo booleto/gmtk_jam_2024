@@ -3,6 +3,7 @@ class_name EntityManager
 
 @onready var build_utils: BuildUtils = $BuildUtils
 @onready var resource_utils: ResourceUtils = $ResourceUtils
+@onready var card_manager: CardManager = $CardManager
 
 var turn : int = 1
 

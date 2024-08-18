@@ -14,4 +14,5 @@ signal citizen_iq_changed(new_amount : int)
 signal citizen_health_changed(new_amount : int)
 signal citizen_mood_changed(new_amount : int)
 
-signal card_changed()
+signal card_play_event(card)
+signal card_hover_event(card)
