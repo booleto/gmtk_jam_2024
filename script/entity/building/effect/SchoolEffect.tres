@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SchoolEffect" load_steps=2 format=3 uid="uid://c5p8xvjn6aohn"]
+[gd_resource type="Resource" script_class="SchoolEffect" load_steps=2 format=3 uid="uid://fg6ypup4nyun"]
 
 [ext_resource type="Script" path="res://script/entity/building/effect/SchoolEffect.gd" id="1_snyoj"]
 

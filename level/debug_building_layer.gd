@@ -1,8 +1,9 @@
 extends TileMapLayer
 
-var tilemap_size := Vector2i(32, 32)
-var tilemap_bound := Vector2i(10, 10)
-
+@export var tilemap_size := Vector2i(32, 32)
+@export var tilemap_bound := Vector2i(10, 10)
+var color := Color(255.0, 0.0, 0.0)
+var points: PackedVector2Array = []
 func _ready():
 	await get_parent().ready
 	tilemap_bound = $"../BuildUtils".grid_bounds
@@ -12,7 +13,6 @@ func _draw():
 	var color = Color(255.0, 0.0, 0.0)
 	var bound = tilemap_size * tilemap_bound
 	
-	var points: PackedVector2Array = []
 	points.resize(tilemap_bound.x * tilemap_bound.y * 2)
 	
 	var i := 0
@@ -26,7 +26,9 @@ func _draw():
 		i += 1
 		points[i] = Vector2(bound.x, y * tilemap_size.y)
 		i += 1
-	
+
+func _draw():
 	draw_multiline(points, color)
+
 func _process(delta):
 	queue_redraw()

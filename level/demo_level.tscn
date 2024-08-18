@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://c6wxft03e4t0m"]
+[gd_scene load_steps=11 format=4 uid="uid://c6wxft03e4t0m"]
 
 [ext_resource type="PackedScene" uid="uid://c3dmp6ktllqnl" path="res://scene/UI/ui.tscn" id="1_g82vk"]
 [ext_resource type="Script" path="res://script/entity/buildutils/BuildUtils.gd" id="2_83224"]
@@ -9,10 +9,6 @@
 [ext_resource type="TileSet" uid="uid://dsnnh7f4ckv0w" path="res://scene/tileset/grasstree.tres" id="3_qmqw6"]
 [ext_resource type="Script" path="res://script/component/playerinput/PlayerInput.gd" id="6_i0wp4"]
 [ext_resource type="Script" path="res://script/resource/CityResource.gd" id="7_dqgsa"]
-[ext_resource type="Resource" uid="uid://bp6g5fticr3s1" path="res://script/resource/building/MarketData.tres" id="7_f1l5f"]
-[ext_resource type="Resource" uid="uid://ir6vk1und44s" path="res://script/resource/building/CompanyData.tres" id="8_c0ate"]
-[ext_resource type="Resource" uid="uid://b2xvnmt8jlpoc" path="res://script/resource/building/HospitalData.tres" id="9_ydtp5"]
-[ext_resource type="Resource" uid="uid://38t1difsep1y" path="res://script/resource/building/HouseData.tres" id="10_4q351"]
 
 [sub_resource type="Resource" id="Resource_fb7xx"]
 script = ExtResource("7_dqgsa")
@@ -50,11 +46,6 @@ resource = SubResource("Resource_fb7xx")
 [node name="PlayerInput" type="Node2D" parent="EntityManager" node_paths=PackedStringArray("build_utils")]
 script = ExtResource("6_i0wp4")
 build_utils = NodePath("../BuildUtils")
-school = ExtResource("3_ohqkt")
-market = ExtResource("7_f1l5f")
-company = ExtResource("8_c0ate")
-hospital = ExtResource("9_ydtp5")
-house = ExtResource("10_4q351")
 
 [node name="Camera2D" type="Camera2D" parent="EntityManager/PlayerInput"]
 position = Vector2(212, 114)

@@ -3,11 +3,12 @@
 [ext_resource type="Script" path="res://script/resource/building/BuildingData.gd" id="1_cu8vw"]
 [ext_resource type="PackedScene" uid="uid://pxnsqpnr0vxj" path="res://scene/entity/School.tscn" id="1_v2q7u"]
 [ext_resource type="Resource" uid="uid://cdlf68xs55h5e" path="res://script/resource/cityresource/SchoolCost.tres" id="1_w4h82"]
-[ext_resource type="Resource" uid="uid://c5p8xvjn6aohn" path="res://script/entity/building/effect/SchoolEffect.tres" id="2_ntncs"]
+[ext_resource type="Resource" uid="uid://fg6ypup4nyun" path="res://script/entity/building/effect/SchoolEffect.tres" id="2_ntncs"]
 [ext_resource type="Texture2D" uid="uid://rbaynknujnxv" path="res://Assets/Sprites/School.png" id="3_4e176"]
 
 [resource]
 script = ExtResource("1_cu8vw")
+input_action = "card1"
 building_name = "school"
 sprite = ExtResource("3_4e176")
 cost = ExtResource("1_w4h82")

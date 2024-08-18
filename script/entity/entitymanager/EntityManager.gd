@@ -19,10 +19,9 @@ func resume_game():
 	EventBus.pause_event.emit(false)
 	
 func purchase_new_building(position: Vector2, building : BuildingData) -> bool:
-	if not resource_utils.able_to_fulfill(building.cost):
+	if not resource_utils.try_fulfill(building.cost):
 		return false
 	
-	resource_utils.try_fulfill(building.cost)
 	build_utils.place_building_global(position, building)
 	return true
 
