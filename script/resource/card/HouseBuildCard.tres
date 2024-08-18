@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Card" load_steps=5 format=3 uid="uid://cmaqq4j2oxkyt"]
+
+[ext_resource type="Resource" uid="uid://38t1difsep1y" path="res://script/resource/building/HouseData.tres" id="1_g624s"]
+[ext_resource type="Script" path="res://script/resource/card/cardeffect/BuildEffect.gd" id="2_1ho35"]
+[ext_resource type="Script" path="res://script/resource/card/Card.gd" id="3_fe8k3"]
+
+[sub_resource type="Resource" id="Resource_mafgi"]
+script = ExtResource("2_1ho35")
+building = ExtResource("1_g624s")
+
+[resource]
+script = ExtResource("3_fe8k3")
+card_name = "Build House"
+energy_cost = 0
+type = 0
+effect = SubResource("Resource_mafgi")
+frame = 0
+tooltip = "Builds a House"

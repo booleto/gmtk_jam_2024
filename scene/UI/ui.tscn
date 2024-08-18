@@ -1,3 +1,51 @@
-[gd_scene format=3 uid="uid://c3dmp6ktllqnl"]
+[gd_scene load_steps=7 format=3 uid="uid://c3dmp6ktllqnl"]
+
+[ext_resource type="PackedScene" uid="uid://dqajhmc3raw2" path="res://scene/UI/card/CardUI.tscn" id="1_2sddq"]
+[ext_resource type="Resource" uid="uid://bbxttghfa3pmx" path="res://script/resource/card/CompanyBuildCard.tres" id="2_40rw8"]
+[ext_resource type="Resource" uid="uid://dvkoko088k15s" path="res://script/resource/card/HospitalBuildCard.tres" id="3_07k00"]
+[ext_resource type="Resource" uid="uid://cmaqq4j2oxkyt" path="res://script/resource/card/HouseBuildCard.tres" id="4_xs47m"]
+[ext_resource type="Resource" uid="uid://bw868i505l1d5" path="res://script/resource/card/MarketBuildCard.tres" id="5_ov6sb"]
+[ext_resource type="Resource" uid="uid://bmcrl3nexwj7d" path="res://script/resource/card/SchoolBuildCard.tres" id="6_xdv65"]
 
 [node name="UI" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -119.12
+offset_bottom = 0.38501
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="CardContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 4.01
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="CardUI" parent="MarginContainer/CardContainer" instance=ExtResource("1_2sddq")]
+custom_minimum_size = Vector2(72, 70)
+layout_mode = 2
+card = ExtResource("2_40rw8")
+
+[node name="CardUI2" parent="MarginContainer/CardContainer" instance=ExtResource("1_2sddq")]
+custom_minimum_size = Vector2(72, 70)
+layout_mode = 2
+card = ExtResource("3_07k00")
+
+[node name="CardUI3" parent="MarginContainer/CardContainer" instance=ExtResource("1_2sddq")]
+custom_minimum_size = Vector2(72, 70)
+layout_mode = 2
+card = ExtResource("4_xs47m")
+
+[node name="CardUI4" parent="MarginContainer/CardContainer" instance=ExtResource("1_2sddq")]
+custom_minimum_size = Vector2(72, 70)
+layout_mode = 2
+card = ExtResource("5_ov6sb")
+
+[node name="CardUI5" parent="MarginContainer/CardContainer" instance=ExtResource("1_2sddq")]
+custom_minimum_size = Vector2(72, 70)
+layout_mode = 2
+card = ExtResource("6_xdv65")

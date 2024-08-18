@@ -8,6 +8,7 @@
 
 [resource]
 script = ExtResource("1_gjtp8")
+input_action = "card3"
 building_name = "house"
 sprite = ExtResource("4_xxxo3")
 cost = ExtResource("1_jb638")

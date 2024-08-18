@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Card" load_steps=5 format=3 uid="uid://bw868i505l1d5"]
+
+[ext_resource type="Resource" uid="uid://bp6g5fticr3s1" path="res://script/resource/building/MarketData.tres" id="1_ordby"]
+[ext_resource type="Script" path="res://script/resource/card/cardeffect/BuildEffect.gd" id="2_7w2pk"]
+[ext_resource type="Script" path="res://script/resource/card/Card.gd" id="3_w1f28"]
+
+[sub_resource type="Resource" id="Resource_mafgi"]
+script = ExtResource("2_7w2pk")
+building = ExtResource("1_ordby")
+
+[resource]
+script = ExtResource("3_w1f28")
+card_name = "Build Market"
+energy_cost = 0
+type = 0
+effect = SubResource("Resource_mafgi")
+frame = 2
+tooltip = "Builds a Market"

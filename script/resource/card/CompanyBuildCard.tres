@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Card" load_steps=5 format=3 uid="uid://bbxttghfa3pmx"]
+
+[ext_resource type="Resource" uid="uid://ir6vk1und44s" path="res://script/resource/building/CompanyData.tres" id="1_dqoye"]
+[ext_resource type="Script" path="res://script/resource/card/cardeffect/BuildEffect.gd" id="2_23xmi"]
+[ext_resource type="Script" path="res://script/resource/card/Card.gd" id="3_1l1ru"]
+
+[sub_resource type="Resource" id="Resource_mafgi"]
+script = ExtResource("2_23xmi")
+building = ExtResource("1_dqoye")
+
+[resource]
+script = ExtResource("3_1l1ru")
+card_name = "Build Company"
+energy_cost = 0
+type = 0
+effect = SubResource("Resource_mafgi")
+frame = 5
+tooltip = "Builds a Company
+"

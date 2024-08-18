@@ -6,5 +6,5 @@ func calc_bonus(adjacent_builds : Array[Building], args : Dictionary) -> CityRes
 	var turn = args["turn"]
 	
 	var adj_house_count = nearby_building(adjacent_builds, "house")
-	var resource = CityResource.new(0, -1 * adj_house_count, 0, -5, 0)
+	var resource = CityResource.new(-1 * adj_house_count, 0, -5, 0)
 	return resource

@@ -1,15 +1,21 @@
 extends Node2D
 class_name EntityManager
 
-@onready var build_utils : BuildUtils = $BuildUtils
-@onready var resource_utils : ResourceUtils = $ResourceUtils
+@onready var build_utils: BuildUtils = $BuildUtils
+@onready var resource_utils: ResourceUtils = $ResourceUtils
+@onready var card_manager: CardManager = $CardManager
+@onready var camera: Camera2D = $Camera2D
+
+func _ready():
+	camera.position = build_utils.cell_size * build_utils.grid_bounds / 2
+	
 
 var turn : int = 1
 
 func end_turn():
 	EventBus.turn_end_event.emit(turn)
 	print_current_resources()
-	prints("______________________ END OF TURN", turn, " ______________________")
+	prints("______________________ END OF TURN ", turn, " ______________________")
 	turn += 1
 
 func pause_game():
@@ -19,10 +25,9 @@ func resume_game():
 	EventBus.pause_event.emit(false)
 	
 func purchase_new_building(position: Vector2, building : BuildingData) -> bool:
-	if not resource_utils.able_to_fulfill(building.cost):
+	if not resource_utils.try_fulfill(building.cost):
 		return false
 	
-	resource_utils.try_fulfill(building.cost)
 	build_utils.place_building_global(position, building)
 	return true
 
@@ -30,7 +35,15 @@ func purchase_new_building(position: Vector2, building : BuildingData) -> bool:
 func print_current_resources():
 	var res = resource_utils.resource
 	prints("______________________ CURRENT RESOURCES ______________________")
-	prints("health: ", res.health, " population: ", res.population, " intellect: ", res.intellect, " mood: ", res.mood, " money: ", res.money)
+	prints("health: ", res.health, " population: ", res.population, " mood: ", res.mood, " money: ", res.money)
+
+
+func play_card_in_hand(index: int) -> bool:
+	if card_manager.play_card(index):
+		card_manager.print_hand()
+		end_turn()
+		return true
+	return false
 
 
 func _on_build_utils_building_built(building: Building) -> void:
