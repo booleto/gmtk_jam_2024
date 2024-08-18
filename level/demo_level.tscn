@@ -54,8 +54,12 @@ build_utils = NodePath("../BuildUtils")
 
 [node name="CardManager" type="Node" parent="EntityManager"]
 script = ExtResource("10_0c5ni")
-deck_starters = PackedInt32Array(10, 10, 10, 10, 10)
 hand_limit = 5
 deck_size = 50
+"Build Company Starters" = 10
+"Build Hospital Starters" = 10
+"Build House Starters" = 10
+"Build Market Starters" = 10
+"Build School Starters" = 10
 
 [connection signal="building_built" from="EntityManager/BuildUtils" to="EntityManager" method="_on_build_utils_building_built"]
