@@ -4,6 +4,8 @@ var tilemap_size := Vector2i(32, 32)
 var tilemap_bound := Vector2i(10, 10)
 
 func _ready():
+	await get_parent().ready
+	tilemap_bound = $"../BuildUtils".grid_bounds
 	set_process(true)
 	
 func _draw():
