@@ -17,8 +17,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var mouse = get_global_mouse_position()
-	
 	if Input.is_action_just_pressed("card1"):
 		buy_building(school)
 	
