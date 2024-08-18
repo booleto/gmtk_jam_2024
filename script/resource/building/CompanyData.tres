@@ -3,12 +3,12 @@
 [ext_resource type="Resource" uid="uid://dhh2q8q4wono5" path="res://script/resource/cityresource/CompanyCost.tres" id="1_jiuei"]
 [ext_resource type="Script" path="res://script/resource/building/BuildingData.gd" id="1_x6l2v"]
 [ext_resource type="PackedScene" uid="uid://cu8ggfwahuca" path="res://scene/entity/Company.tscn" id="1_xeeb8"]
-[ext_resource type="Texture2D" uid="uid://bkjth8s6b151r" path="res://Assets/Sprites/Marketbig.png" id="4_1fv61"]
+[ext_resource type="Texture2D" uid="uid://dktp1mayyxe5j" path="res://Assets/Sprites/VincentKompany.png" id="4_o4vwj"]
 
 [resource]
 script = ExtResource("1_x6l2v")
 building_name = "company"
-sprite = ExtResource("4_1fv61")
+sprite = ExtResource("4_o4vwj")
 cost = ExtResource("1_jiuei")
-size = Vector2i(2, 1)
+size = Vector2i(2, 2)
 scene = ExtResource("1_xeeb8")
