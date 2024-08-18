@@ -17,7 +17,7 @@ var input_index : Dictionary = {
 var entity_manager : EntityManager
 var data: Array[BuildingData] = []
 
-func _init():
+func _init() -> void:
 	for datum in DirAccess.get_files_at("res://script/resource/building"):
 		if datum.ends_with("Data.tres"):
 			data.append(load("res://script/resource/building/" + datum) as BuildingData)

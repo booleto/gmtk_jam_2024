@@ -4,6 +4,11 @@ class_name EntityManager
 @onready var build_utils: BuildUtils = $BuildUtils
 @onready var resource_utils: ResourceUtils = $ResourceUtils
 @onready var card_manager: CardManager = $CardManager
+@onready var camera: Camera2D = $Camera2D
+
+func _ready():
+	camera.position = build_utils.cell_size * build_utils.grid_bounds / 2
+	
 
 var turn : int = 1
 
