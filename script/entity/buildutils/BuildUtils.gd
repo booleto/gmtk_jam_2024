@@ -7,7 +7,7 @@ signal building_built(building: Building)
 @export var tile_layer : TileMapLayer
 @export var grid_bounds : Vector2i
 
-var cell_size : Vector2
+var cell_size : Vector2i
 var building_placement : Array[Array] = []
 
 func _ready() -> void:
