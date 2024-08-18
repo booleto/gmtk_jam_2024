@@ -1,7 +1,7 @@
 extends Node
 
 @export var build_utils : BuildUtils
-var resource: CityResource
+@export var resource: CityResource
 
 # Connect building turn end signals to handler function
 func _ready() -> void:

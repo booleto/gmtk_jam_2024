@@ -52,3 +52,4 @@ func _process(delta: float) -> void:
 func trigger_turn_end():
 	print("end turn")
 	entity_manager.end_turn()
+	
