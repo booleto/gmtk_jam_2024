@@ -11,6 +11,7 @@ script = ExtResource("2_wr63k")
 
 [resource]
 script = ExtResource("1_x6l2v")
+input_action = "card4"
 building_name = "company"
 sprite = ExtResource("4_o4vwj")
 cost = ExtResource("1_jiuei")
