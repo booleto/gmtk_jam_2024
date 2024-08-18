@@ -16,7 +16,7 @@ func change_population_by(amount: int):
 
 ## Internal use, don't use it or perish
 func _resource_as_array(res: CityResource) -> PackedInt32Array:
-	return [res.intellect, res.population, res.mood, res.health, res.money]
+	return [res.population, res.mood, res.health, res.money]
 
 
 ## Pass a CityResource and return a bool whether it is able to fulfill the request
@@ -32,21 +32,17 @@ func able_to_fulfill(request: CityResource) -> bool:
 
 func try_fulfill(request: CityResource) -> bool:
 	if able_to_fulfill(request) == true:
-		resource.intellect -= request.intellect
 		resource.population -= request.population
 		resource.mood -= request.mood
 		resource.health -= request.health
 		resource.money -= request.money
 		
-		if request.intellect != 0:
-			EventBus.citizen_iq_changed.emit(resource.intellect)
-			print("iq changed: ", resource.intellect)
 		if request.population != 0:
 			EventBus.citizen_number_changed.emit(resource.population)
 			print("population changed: ", resource.population)
 		if request.mood != 0:
 			EventBus.citizen_mood_changed.emit(resource.mood)
-			print("mood changed: ", resource.intellect)
+			print("mood changed: ", resource.mood)
 		if request.health != 0:
 			EventBus.citizen_health_changed.emit(resource.health)
 			print("health changed: ", resource.health)

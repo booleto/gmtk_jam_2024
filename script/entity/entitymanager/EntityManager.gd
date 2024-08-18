@@ -1,15 +1,15 @@
 extends Node2D
 class_name EntityManager
 
-@onready var build_utils : BuildUtils = $BuildUtils
-@onready var resource_utils : ResourceUtils = $ResourceUtils
+@onready var build_utils: BuildUtils = $BuildUtils
+@onready var resource_utils: ResourceUtils = $ResourceUtils
 
 var turn : int = 1
 
 func end_turn():
 	EventBus.turn_end_event.emit(turn)
 	print_current_resources()
-	prints("______________________ END OF TURN", turn, " ______________________")
+	prints("______________________ END OF TURN ", turn, " ______________________")
 	turn += 1
 
 func pause_game():
@@ -30,7 +30,7 @@ func purchase_new_building(position: Vector2, building : BuildingData) -> bool:
 func print_current_resources():
 	var res = resource_utils.resource
 	prints("______________________ CURRENT RESOURCES ______________________")
-	prints("health: ", res.health, " population: ", res.population, " intellect: ", res.intellect, " mood: ", res.mood, " money: ", res.money)
+	prints("health: ", res.health, " population: ", res.population, " mood: ", res.mood, " money: ", res.money)
 
 
 func _on_build_utils_building_built(building: Building) -> void:
