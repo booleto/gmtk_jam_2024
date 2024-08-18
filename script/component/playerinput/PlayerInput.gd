@@ -20,36 +20,30 @@ func _process(delta: float) -> void:
 	var mouse = get_global_mouse_position()
 	
 	if Input.is_action_just_pressed("card1"):
-		print("build test 1")
-		build_utils.place_building_global(mouse, school)
-		#build_utils.print_placement()
-		trigger_turn_end()
+		buy_building(school)
 	
 	if Input.is_action_just_pressed("card2"):
-		print("build test 2")
-		build_utils.place_building_global(mouse, market)
-		#build_utils.print_placement()
-		trigger_turn_end()
+		buy_building(market)
 	
 	if Input.is_action_just_pressed("card3"):
-		print("build test 3")
-		build_utils.place_building_global(mouse, house)
-		#build_utils.print_placement()
-		trigger_turn_end()
+		buy_building(house)
 	
 	if Input.is_action_just_pressed("card4"):
-		print("build test 4")
-		build_utils.place_building_global(mouse, company)
-		#build_utils.print_placement()
-		trigger_turn_end()
+		buy_building(company)
 	
 	if Input.is_action_just_pressed("card5"):
-		print("build test 5")
-		build_utils.place_building_global(mouse, hospital)
-		#build_utils.print_placement()
-		trigger_turn_end()
+		buy_building(hospital)
+
 
 func trigger_turn_end():
-	print("end turn")
 	entity_manager.end_turn()
 	
+
+func buy_building(building : BuildingData) -> bool:
+	prints("buying: ", building.building_name)
+	if entity_manager.purchase_new_building(get_global_mouse_position(), building):
+		print("building successfully bought")
+		trigger_turn_end()
+		return true
+	else:
+		return false

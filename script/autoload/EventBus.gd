@@ -5,7 +5,7 @@ signal game_start_event
 signal game_won_event
 signal game_lose_event
 signal pause_event(is_paused : bool)
-signal turn_end_event
+signal turn_end_event(turn : int)
 
 # Game resource change
 signal money_changed(new_amount : int)

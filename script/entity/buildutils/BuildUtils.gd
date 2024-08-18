@@ -12,7 +12,6 @@ var building_placement : Array[Array] = []
 
 func _ready() -> void:
 	cell_size = tile_layer.tile_set.tile_size
-	grid_bounds = Vector2i(10, 10)
 	
 	for i in range(grid_bounds.x):
 		building_placement.append([])
@@ -40,6 +39,7 @@ func place_building(position : Vector2, building_data : BuildingData) -> void:
 	new_building.grid_position = position
 	add_sibling(new_building)
 	new_building.position = position * cell_size.x
+	new_building.build_utils = self
 	var size: Vector2i = building_data.size
 	
 	for i in range(size.x):
@@ -70,10 +70,13 @@ func destroy_building(pos : Vector2) -> void:
 		for j in range(building_size.y):
 			building_placement[position.x + i][position.y + j] = null
 	
-	
+
+func is_position_in_bounds(pos: Vector2i) -> bool:
+	return ((0 <= pos.x and pos.x < grid_bounds.x) and (0 <= pos.y and pos.y < grid_bounds.y))
+
 
 func is_position_available(pos : Vector2i) -> bool:
-	if not ((0 <= pos.x and pos.x < grid_bounds.x) and (0 <= pos.y and pos.y < grid_bounds.y)):
+	if not is_position_in_bounds(pos):
 		return false
 		
 	return building_placement[pos.x][pos.y] == null
@@ -91,6 +94,24 @@ func get_building_in_position(pos: Vector2i) -> Building:
 	if is_position_available(pos):
 		return null
 	return building_placement[pos.x][pos.y]
+	
+
+func find_adjacent_builds(pos: Vector2i) -> Array[Building]:
+	var build = get_building_in_position(pos)
+	if build == null: return []
+	var size = build.building_data.size
+	
+	var start_iter = build.grid_position - Vector2i(1, 1)
+	var iter_size = size + Vector2i(2, 2)
+	
+	var adjs : Array[Building] = []
+	for i in range(iter_size.x):
+		for j in range(iter_size.y):
+			var ipos = Vector2i(i + start_iter.x, j + start_iter.y)
+			if is_position_in_bounds(ipos):
+				if building_placement[ipos.x][ipos.y] != null and building_placement[ipos.x][ipos.y] not in adjs:
+					adjs.append(building_placement[ipos.x][ipos.y])
+	return adjs
 	
 	
 func print_placement() -> void:

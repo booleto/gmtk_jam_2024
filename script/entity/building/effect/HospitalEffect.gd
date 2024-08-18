@@ -1,11 +1,10 @@
-extends Node
+extends BuildingEffect
+class_name HospitalEffect
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func calc_bonus(adjacent_builds : Array[Building], args : Dictionary) -> CityResource:
+	var turn = args["turn"]
+	
+	var adj_house_count = nearby_building(adjacent_builds, "house")
+	var resource = CityResource.new(0, -1 * adj_house_count, 0, -5, 0)
+	return resource

@@ -1,4 +1,5 @@
 extends Node
+class_name ResourceUtils
 
 @export var build_utils : BuildUtils
 @export var resource: CityResource
@@ -22,7 +23,7 @@ func _resource_as_array(res: CityResource) -> PackedInt32Array:
 func able_to_fulfill(request: CityResource) -> bool:
 	var res_arr = _resource_as_array(resource)
 	var req_arr = _resource_as_array(request)
-	for i in range(res_arr):
+	for i in range(len(res_arr)):
 		if res_arr[i] - req_arr[i] < 0:
 			return false
 
@@ -36,6 +37,23 @@ func try_fulfill(request: CityResource) -> bool:
 		resource.mood -= request.mood
 		resource.health -= request.health
 		resource.money -= request.money
+		
+		if request.intellect != 0:
+			EventBus.citizen_iq_changed.emit(resource.intellect)
+			print("iq changed: ", resource.intellect)
+		if request.population != 0:
+			EventBus.citizen_number_changed.emit(resource.population)
+			print("population changed: ", resource.population)
+		if request.mood != 0:
+			EventBus.citizen_mood_changed.emit(resource.mood)
+			print("mood changed: ", resource.intellect)
+		if request.health != 0:
+			EventBus.citizen_health_changed.emit(resource.health)
+			print("health changed: ", resource.health)
+		if request.money != 0:
+			EventBus.money_changed.emit(resource.money)
+			print("money changed: ", resource.money)
+			
 		return true
 	else:
 		return false
@@ -43,9 +61,11 @@ func try_fulfill(request: CityResource) -> bool:
 
 func _on_new_building(building : Building):
 	building.apply_effect.connect(_on_building_effect)
-	print("connected to building: ", building)
 	
 
-func _on_building_effect(effect : BuildingEffect):
-	prints("new turn effect: ", effect)
+func _on_building_effect(effect : BuildingEffect, adjs : Array[Building]):
+	#prints("new turn effect: ", effect)
+	prints("adj builds: ", adjs.map(func(b : Building): return b.building_name))
+	var changes : CityResource = effect.calc_bonus(adjs, {"turn" : get_parent().turn})
+	try_fulfill(changes)
 	pass

@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="MarketEffect" load_steps=2 format=3 uid="uid://bxbuxmje4q25e"]
+
+[ext_resource type="Script" path="res://script/entity/building/effect/MarketEffect.gd" id="1_vmwlg"]
+
+[resource]
+script = ExtResource("1_vmwlg")

@@ -1,12 +1,8 @@
-extends Node
+extends BuildingEffect
+class_name HouseEffect
 
-signal update_data
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func calc_bonus(adjacent_builds : Array[Building], args : Dictionary) -> CityResource:
+	var turn : int = args["turn"]
+	
+	var resource = CityResource.new(0, -2, 0, 0, 0) if turn % 2 == 1 else CityResource.new(0, 0, 0, 0, 0)
+	return resource
