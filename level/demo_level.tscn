@@ -54,7 +54,7 @@ build_utils = NodePath("../BuildUtils")
 
 [node name="CardManager" type="Node" parent="EntityManager"]
 script = ExtResource("10_0c5ni")
-deck_starters = Array[int]([10, 10, 10, 10, 10])
+deck_starters = PackedInt32Array(10, 10, 10, 10, 10)
 hand_limit = 5
 deck_size = 50
 

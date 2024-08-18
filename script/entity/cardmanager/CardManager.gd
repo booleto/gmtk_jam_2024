@@ -5,7 +5,7 @@ signal deck_shuffled
 signal card_played(card: Card)
 signal card_drawn(card: Card)
 
-@export var deck_starters : Array[int]
+@export var deck_starters : PackedInt32Array
 @export var hand_limit : int
 @export var deck_size : int
 
