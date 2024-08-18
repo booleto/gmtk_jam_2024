@@ -7,6 +7,13 @@ extends Node2D
 #@export var hospital : BuildingData
 #@export var house : BuildingData
 
+var input_index : Dictionary = {
+	"card1" : 0,
+	"card2" : 1,
+	"card3" : 2,
+	"card4" : 3,
+	"card5" : 4
+}
 var entity_manager : EntityManager
 var data: Array[BuildingData] = []
 
@@ -23,9 +30,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	for datum in data:
-		if Input.is_action_just_pressed(datum.input_action):
-			buy_building(datum)
+	#for datum in data:
+		#if Input.is_action_just_pressed(datum.input_action):
+			#buy_building(datum)
+	for key in input_index.keys():
+		if Input.is_action_just_pressed(key):
+			entity_manager.play_card_in_hand(input_index[key])
+
 
 func trigger_turn_end():
 	entity_manager.end_turn()

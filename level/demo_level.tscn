@@ -55,5 +55,7 @@ zoom = Vector2(2, 2)
 [node name="CardManager" type="Node" parent="EntityManager"]
 script = ExtResource("10_0c5ni")
 deck_starters = Array[int]([10, 10, 10, 10, 10])
+hand_limit = 5
+deck_size = 50
 
 [connection signal="building_built" from="EntityManager/BuildUtils" to="EntityManager" method="_on_build_utils_building_built"]

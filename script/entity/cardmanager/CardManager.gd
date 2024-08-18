@@ -6,7 +6,7 @@ signal card_played(card: Card)
 signal card_drawn(card: Card)
 
 @export var deck_starters : Array[int]
-@export var card_limit : int
+@export var hand_limit : int
 @export var deck_size : int
 
 var entity_manager : EntityManager
@@ -33,18 +33,21 @@ func initialize_deck(): # TODO: remove placeholder
 	for i in range(deck_starters[4]):
 		deck.append(DataIndex.CARD_SCHOOL)
 	deck.shuffle()
+	fill_hand()
+	print_hand()
 	
 	prints(deck.map(func(c: Card): return c.card_name))
 
 
 func play_card(index: int, discard: bool = false) -> bool:
-	if index < 0 or index >= card_limit:
+	if index < 0 or index >= hand_limit:
 		return false
 	var result = hand[index].effect.execute(entity_manager)
 	if result:
 		var played_card: Card = hand.pop_at(index)
 		draw_card()
-		discard_pile.append(played_card) if not discard else null
+		if not discard:
+			discard_pile.append(played_card)
 		card_played.emit(played_card)
 		
 	return result
@@ -68,5 +71,16 @@ func shuffle_deck():
 	deck_shuffled.emit()
 
 
+func fill_hand():
+	while not is_hand_full():
+		draw_card()
+	
+
 func is_hand_full() -> bool:
-	return len(hand) <= card_limit
+	return len(hand) >= hand_limit
+	
+
+	
+func print_hand():
+	prints("______________________ CURRENT HAND ______________________")
+	prints(hand.map(func(c: Card): return c.card_name))
