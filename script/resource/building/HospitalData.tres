@@ -3,12 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://1b5yrvdifmd7" path="res://scene/entity/Hospital.tscn" id="1_0wffr"]
 [ext_resource type="Script" path="res://script/resource/building/BuildingData.gd" id="1_l83wb"]
 [ext_resource type="Resource" uid="uid://bskt8h4h8r3he" path="res://script/resource/cityresource/HospitalCost.tres" id="1_uaksa"]
-[ext_resource type="Resource" uid="uid://batdnuylnlrf5" path="res://script/entity/building/effect/HospitalEffect.tres" id="2_qn7up"]
+[ext_resource type="Resource" uid="uid://ia61n1waq7tk" path="res://script/entity/building/effect/HospitalEffect.tres" id="2_qn7up"]
 [ext_resource type="Texture2D" uid="uid://bwogvwxbdw3an" path="res://Assets/Sprites/Hospital.png" id="4_7qmay"]
 
 [resource]
 script = ExtResource("1_l83wb")
-input_action = "card5"
+input_action = "card2"
 building_name = "hospital"
 sprite = ExtResource("4_7qmay")
 cost = ExtResource("1_uaksa")

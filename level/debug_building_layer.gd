@@ -7,10 +7,7 @@ var points: PackedVector2Array = []
 func _ready():
 	await get_parent().ready
 	tilemap_bound = $"../BuildUtils".grid_bounds
-	set_process(true)
-	
-func _draw():
-	var color = Color(255.0, 0.0, 0.0)
+
 	var bound = tilemap_size * tilemap_bound
 	
 	points.resize(tilemap_bound.x * tilemap_bound.y * 2)

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="HospitalEffect" load_steps=2 format=3 uid="uid://batdnuylnlrf5"]
+[gd_resource type="Resource" script_class="HospitalEffect" load_steps=2 format=3 uid="uid://ia61n1waq7tk"]
 
 [ext_resource type="Script" path="res://script/entity/building/effect/HospitalEffect.gd" id="1_r02ha"]
 

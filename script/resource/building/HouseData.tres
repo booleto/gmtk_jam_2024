@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bf8fbet1x70gp" path="res://scene/entity/House.tscn" id="1_gduu1"]
 [ext_resource type="Script" path="res://script/resource/building/BuildingData.gd" id="1_gjtp8"]
 [ext_resource type="Resource" uid="uid://c3gy2lj48rmt4" path="res://script/resource/cityresource/HouseCost.tres" id="1_jb638"]
-[ext_resource type="Resource" path="res://script/entity/building/effect/HouseEffect.tres" id="2_vgiwm"]
+[ext_resource type="Resource" uid="uid://m6njpako1lpq" path="res://script/entity/building/effect/HouseEffect.tres" id="2_vgiwm"]
 [ext_resource type="Texture2D" uid="uid://dbsq1p40a8so1" path="res://Assets/Sprites/House.png" id="4_xxxo3"]
 
 [resource]
