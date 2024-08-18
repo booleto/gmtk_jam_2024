@@ -51,4 +51,6 @@ build_utils = NodePath("../BuildUtils")
 position = Vector2(212, 114)
 zoom = Vector2(2, 2)
 
+[node name="CardManager" type="Node" parent="EntityManager"]
+
 [connection signal="building_built" from="EntityManager/BuildUtils" to="EntityManager" method="_on_build_utils_building_built"]
