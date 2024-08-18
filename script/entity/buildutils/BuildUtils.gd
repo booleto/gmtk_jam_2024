@@ -26,9 +26,12 @@ func _ready() -> void:
 	#destroy_building(Vector2i(1, 1))
 	#print_placement()
 
-func place_building_global(global_pos : Vector2, building_data : BuildingData) -> void:
+func place_building_global(global_pos : Vector2, building_data : BuildingData) -> bool:
 	var map_pos = tile_layer.local_to_map(global_pos)
+	if not is_placement_valid(map_pos, building_data.size):
+		return false
 	place_building(map_pos, building_data)
+	return true
 
 
 func place_building(position : Vector2, building_data : BuildingData) -> void:

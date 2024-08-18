@@ -91,6 +91,7 @@ func play_card(index: int, discard: bool = false) -> bool:
 		if not discard:
 			discard_pile.append(played_card)
 		card_played.emit(played_card)
+		EventBus.card_setup_event.emit(hand)
 		
 	return result
 	
@@ -116,6 +117,7 @@ func shuffle_deck():
 func fill_hand():
 	while not is_hand_full():
 		draw_card()
+	EventBus.card_setup_event.emit(hand)
 	
 
 func is_hand_full() -> bool:

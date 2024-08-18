@@ -1,8 +1,9 @@
 extends Container
+class_name CardUI
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var tooltip_panel: Control = $Control
-@onready var tooltip: Label = $Control/PanelContainer/Label
+@onready var tooltip: Label = $Control/PanelContainer/MarginContainer/Label
 @onready var sprite: Sprite2D = $Sprite2D
 
 @export var card : Card
@@ -15,7 +16,7 @@ func load_card_data(card: Card):
 	sprite.frame = card.frame
 
 func _on_mouse_entered() -> void:
-	print("playing animation")
+	#print("playing animation")
 	animation_player.play("inspect")
 	pass # Replace with function body.
 
@@ -24,6 +25,6 @@ func _on_mouse_entered() -> void:
 
 
 func _on_mouse_exited() -> void:
-	print("reset animation")
+	#print("reset animation")
 	animation_player.play("RESET")
 	pass # Replace with function body.

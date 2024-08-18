@@ -28,8 +28,7 @@ func purchase_new_building(position: Vector2, building : BuildingData) -> bool:
 	if not resource_utils.try_fulfill(building.cost):
 		return false
 	
-	build_utils.place_building_global(position, building)
-	return true
+	return build_utils.place_building_global(position, building)
 
 
 func print_current_resources():
