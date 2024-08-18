@@ -14,3 +14,6 @@ card_name = "Build Company"
 energy_cost = 0
 type = 0
 effect = SubResource("Resource_mafgi")
+frame = 5
+tooltip = "Builds a Company
+"

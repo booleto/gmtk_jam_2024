@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dqajhmc3raw2"]
+[gd_scene load_steps=7 format=3 uid="uid://dqajhmc3raw2"]
 
 [ext_resource type="Texture2D" uid="uid://vwnj8ysmtbn0" path="res://Assets/Sprites/Cardsheet 71x95.png" id="1_awfij"]
 [ext_resource type="Script" path="res://script/component/cardui/CardUI.gd" id="1_xiw4t"]
+[ext_resource type="FontFile" uid="uid://bp5p3ye7g5npc" path="res://Assets/Fonts/PIXELADE.ttf" id="3_8g6ff"]
 
 [sub_resource type="Animation" id="Animation_2uyhy"]
 resource_name = "inspect"
@@ -9,26 +10,38 @@ length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("Sprite2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1.56917),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, -200)]
+"values": [Vector2(0, 0), Vector2(-70, -231)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale")
+tracks/1/path = NodePath("Sprite2D:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 0.366021),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(3, 3)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_l08ae"]
@@ -36,7 +49,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
+tracks/0/path = NodePath("Sprite2D:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -48,7 +61,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
+tracks/1/path = NodePath("Sprite2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -56,6 +69,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ul3up"]
@@ -68,21 +93,45 @@ _data = {
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -1078.42
+offset_bottom = -554.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
 script = ExtResource("1_xiw4t")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("1_awfij")
+centered = false
 hframes = 3
 vframes = 2
-frame = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_ul3up")
 }
 
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+offset_left = 146.0
+offset_top = -227.0
+offset_right = 480.0
+offset_bottom = -48.0
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Control/PanelContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("3_8g6ff")
+theme_override_font_sizes/font_size = 24
+autowrap_mode = 3
+
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
