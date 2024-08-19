@@ -27,9 +27,20 @@ func resume_game():
 func purchase_new_building(position: Vector2, building : BuildingData) -> bool:
 	if not resource_utils.able_to_fulfill(building.cost):
 		return false
+		
+	if build_utils.place_building_global(position, building):
+		resource_utils.try_fulfill(building.cost)
+		return true
+	else:
+		return false
 	
-	resource_utils.try_fulfill(building.cost)
-	return build_utils.place_building_global(position, building)
+	
+func get_city_resource() -> CityResource:
+	return resource_utils.resource
+
+
+func get_energy() -> int:
+	return card_manager.energy
 
 
 func print_current_resources():
@@ -39,7 +50,8 @@ func print_current_resources():
 
 
 func play_card_in_hand(index: int) -> bool:
-	if card_manager.play_card(index):
+	var card_success = card_manager.play_card(index)
+	if card_success:
 		card_manager.print_hand()
 		end_turn()
 		return true

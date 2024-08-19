@@ -10,6 +10,7 @@ signal card_init(hand : Array[Card])
 #@export var deck_starters : PackedInt32Array
 @export var hand_limit : int
 @export var deck_size : int
+@export var energy : int
 
 var entity_manager : EntityManager
 

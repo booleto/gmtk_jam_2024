@@ -11,7 +11,7 @@ building = ExtResource("1_ordby")
 [resource]
 script = ExtResource("3_w1f28")
 card_name = "Build Market"
-energy_cost = 0
+energy_cost = 2
 type = 0
 effect = SubResource("Resource_mafgi")
 frame = 2

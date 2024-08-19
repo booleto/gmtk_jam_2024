@@ -11,7 +11,7 @@ building = ExtResource("1_8tj8j")
 [resource]
 script = ExtResource("1_6bg04")
 card_name = "Build Hospital"
-energy_cost = 0
+energy_cost = 6
 type = 0
 effect = SubResource("Resource_mafgi")
 frame = 1
