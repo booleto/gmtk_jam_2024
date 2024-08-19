@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://44svy830gp8r"]
+[gd_scene load_steps=13 format=3 uid="uid://c3dmp6ktllqnl"]
 
 [ext_resource type="PackedScene" uid="uid://dqajhmc3raw2" path="res://scene/UI/card/CardUI.tscn" id="1_2sddq"]
 [ext_resource type="Script" path="res://script/component/cardcontainer/CardContainer.gd" id="1_g246s"]
@@ -7,11 +7,11 @@
 [ext_resource type="Resource" uid="uid://cmaqq4j2oxkyt" path="res://script/resource/card/HouseBuildCard.tres" id="4_xs47m"]
 [ext_resource type="Resource" uid="uid://bw868i505l1d5" path="res://script/resource/card/MarketBuildCard.tres" id="5_ov6sb"]
 [ext_resource type="Resource" uid="uid://bmcrl3nexwj7d" path="res://script/resource/card/SchoolBuildCard.tres" id="6_xdv65"]
-[ext_resource type="PackedScene" uid="uid://b607dlhlybciu" path="res://scene/UI/quota_bar.tscn" id="8_e7w6y"]
+[ext_resource type="PackedScene" uid="uid://b81g17pet1epk" path="res://scene/UI/quota_bar.tscn" id="8_e7w6y"]
 [ext_resource type="Texture2D" uid="uid://bfo0v42xcde5i" path="res://Assets/Sprites/calendar-icon-clipart-design-illustration-free-png.png" id="8_msfvo"]
-[ext_resource type="PackedScene" uid="uid://dq6641rudbief" path="res://scene/UI/health_counter.tscn" id="9_tk8tq"]
-[ext_resource type="PackedScene" uid="uid://dfae5xrgi525k" path="res://scene/UI/money_counter.tscn" id="10_73u6h"]
-[ext_resource type="PackedScene" uid="uid://c7p821r2eufcf" path="res://scene/UI/mood_counter.tscn" id="11_j3mg1"]
+[ext_resource type="PackedScene" uid="uid://bci0g1vd2ys5e" path="res://scene/UI/health_counter.tscn" id="9_tk8tq"]
+[ext_resource type="PackedScene" uid="uid://ciesvmryp3kgw" path="res://scene/UI/money_counter.tscn" id="10_73u6h"]
+[ext_resource type="PackedScene" uid="uid://pve64caacaso" path="res://scene/UI/mood_counter.tscn" id="11_j3mg1"]
 
 [node name="UI" type="CanvasLayer"]
 
