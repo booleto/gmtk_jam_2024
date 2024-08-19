@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://cmaqq4j2oxkyt" path="res://script/resource/card/HouseBuildCard.tres" id="4_xs47m"]
 [ext_resource type="Resource" uid="uid://bw868i505l1d5" path="res://script/resource/card/MarketBuildCard.tres" id="5_ov6sb"]
 [ext_resource type="Resource" uid="uid://bmcrl3nexwj7d" path="res://script/resource/card/SchoolBuildCard.tres" id="6_xdv65"]
-[ext_resource type="Texture2D" uid="uid://j8laob0jplrc" path="res://Assets/Sprites/IconUI.png" id="8_ovgnp"]
+[ext_resource type="Texture2D" uid="uid://7mxpa5bixvwv" path="res://Assets/Sprites/IconUI.png" id="8_ovgnp"]
 [ext_resource type="FontFile" uid="uid://bp5p3ye7g5npc" path="res://Assets/Fonts/PIXELADE.ttf" id="9_i2k1u"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nyhfi"]

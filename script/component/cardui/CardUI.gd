@@ -9,6 +9,7 @@ class_name CardUI
 @export var card : Card
 
 func _ready() -> void:
+	tooltip_panel.hide()
 	load_card_data(card)
 
 func load_card_data(card: Card):
@@ -26,5 +27,5 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	#print("reset animation")
-	animation_player.play("RESET")
+	animation_player.play_backwards("inspect")
 	pass # Replace with function body.
