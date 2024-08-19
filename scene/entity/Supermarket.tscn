@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://d1k82lwnucds"]
+[gd_scene load_steps=3 format=3 uid="uid://cov5jbevd4ylo"]
 
 [ext_resource type="Script" path="res://script/entity/building/Building.gd" id="1_fmkot"]
 [ext_resource type="Texture2D" uid="uid://bkjth8s6b151r" path="res://Assets/Sprites/Marketbig.png" id="2_ogksh"]
