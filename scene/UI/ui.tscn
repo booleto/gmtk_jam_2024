@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c3dmp6ktllqnl"]
+[gd_scene load_steps=13 format=3 uid="uid://c3dmp6ktllqnl"]
 
 [ext_resource type="PackedScene" uid="uid://dqajhmc3raw2" path="res://scene/UI/card/CardUI.tscn" id="1_2sddq"]
 [ext_resource type="Script" path="res://script/component/cardcontainer/CardContainer.gd" id="1_g246s"]
@@ -7,29 +7,13 @@
 [ext_resource type="Resource" uid="uid://cmaqq4j2oxkyt" path="res://script/resource/card/HouseBuildCard.tres" id="4_xs47m"]
 [ext_resource type="Resource" uid="uid://bw868i505l1d5" path="res://script/resource/card/MarketBuildCard.tres" id="5_ov6sb"]
 [ext_resource type="Resource" uid="uid://bmcrl3nexwj7d" path="res://script/resource/card/SchoolBuildCard.tres" id="6_xdv65"]
-[ext_resource type="Texture2D" uid="uid://j8laob0jplrc" path="res://Assets/Sprites/IconUI.png" id="8_ovgnp"]
-[ext_resource type="FontFile" uid="uid://bp5p3ye7g5npc" path="res://Assets/Fonts/PIXELADE.ttf" id="9_i2k1u"]
+[ext_resource type="PackedScene" uid="uid://b607dlhlybciu" path="res://quota_bar.tscn" id="8_e7w6y"]
+[ext_resource type="PackedScene" uid="uid://dq6641rudbief" path="res://health_counter.tscn" id="9_tk8tq"]
+[ext_resource type="PackedScene" uid="uid://dfae5xrgi525k" path="res://money_counter.tscn" id="10_73u6h"]
+[ext_resource type="PackedScene" uid="uid://c7p821r2eufcf" path="res://mood_counter.tscn" id="11_j3mg1"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nyhfi"]
 size = Vector2(100, 100)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wmcee"]
-bg_color = Color(0.959606, 0.377441, 0.419449, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_alpol"]
-bg_color = Color(0.357505, 0.687869, 0.381476, 1)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1bjp6"]
-atlas = ExtResource("8_ovgnp")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xw3oo"]
-atlas = ExtResource("8_ovgnp")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3w8dn"]
-atlas = ExtResource("8_ovgnp")
-region = Rect2(64, 0, 32, 32)
 
 [node name="UI" type="CanvasLayer"]
 
@@ -119,16 +103,8 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 theme_override_constants/separation = 30
 
-[node name="ProgressBar" type="ProgressBar" parent="MarginContainer2/PanelContainer/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(20, 100)
+[node name="Quota Bar" parent="MarginContainer2/PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("8_e7w6y")]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 1
-theme_override_constants/outline_size = 0
-theme_override_styles/background = SubResource("StyleBoxFlat_wmcee")
-theme_override_styles/fill = SubResource("StyleBoxFlat_alpol")
-value = 50.0
-fill_mode = 3
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer2/PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -138,41 +114,14 @@ custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 theme_override_constants/separation = 30
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/PanelContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer"]
+[node name="HealthCounter" parent="MarginContainer2/PanelContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer" instance=ExtResource("9_tk8tq")]
+custom_minimum_size = Vector2(130, 36)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer2/PanelContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_1bjp6")
-
-[node name="Label" type="Label" parent="MarginContainer2/PanelContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("9_i2k1u")
-theme_override_font_sizes/font_size = 25
-text = "placeholder"
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer2/PanelContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer"]
+[node name="MoneyCounter" parent="MarginContainer2/PanelContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer" instance=ExtResource("10_73u6h")]
+custom_minimum_size = Vector2(130, 36)
 layout_mode = 2
 
-[node name="TextureRect3" type="TextureRect" parent="MarginContainer2/PanelContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/HBoxContainer2"]
+[node name="MoodCounter" parent="MarginContainer2/PanelContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer" instance=ExtResource("11_j3mg1")]
+custom_minimum_size = Vector2(130, 36)
 layout_mode = 2
-texture = SubResource("AtlasTexture_xw3oo")
-
-[node name="Label" type="Label" parent="MarginContainer2/PanelContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("9_i2k1u")
-theme_override_font_sizes/font_size = 25
-text = "placeholder"
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer2/PanelContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="TextureRect4" type="TextureRect" parent="MarginContainer2/PanelContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_3w8dn")
-
-[node name="Label" type="Label" parent="MarginContainer2/PanelContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("9_i2k1u")
-theme_override_font_sizes/font_size = 25
-text = "placeholder"

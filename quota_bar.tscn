@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://b607dlhlybciu"]
+
+[ext_resource type="Texture2D" uid="uid://cyvh0lsy0q4xy" path="res://bg.png" id="1_pykdc"]
+[ext_resource type="Texture2D" uid="uid://b2dav83blwxn1" path="res://fill.png" id="2_yd27q"]
+
+[node name="VBoxContainer" type="VBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+layout_mode = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CenterContainer2"]
+layout_mode = 2
+value = 30.0
+fill_mode = 3
+texture_under = ExtResource("1_pykdc")
+texture_progress = ExtResource("2_yd27q")
+
+[node name="Label" type="Label" parent="CenterContainer2/TextureProgressBar"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 50.0
+offset_bottom = 159.0
+theme_override_colors/font_color = Color(0.136786, 0.440975, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 20
+text = "30"
+horizontal_alignment = 1
+vertical_alignment = 1
