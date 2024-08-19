@@ -7,10 +7,10 @@
 [ext_resource type="Resource" uid="uid://cmaqq4j2oxkyt" path="res://script/resource/card/HouseBuildCard.tres" id="4_xs47m"]
 [ext_resource type="Resource" uid="uid://bw868i505l1d5" path="res://script/resource/card/MarketBuildCard.tres" id="5_ov6sb"]
 [ext_resource type="Resource" uid="uid://bmcrl3nexwj7d" path="res://script/resource/card/SchoolBuildCard.tres" id="6_xdv65"]
-[ext_resource type="PackedScene" uid="uid://b607dlhlybciu" path="res://quota_bar.tscn" id="8_e7w6y"]
-[ext_resource type="PackedScene" uid="uid://dq6641rudbief" path="res://health_counter.tscn" id="9_tk8tq"]
-[ext_resource type="PackedScene" uid="uid://dfae5xrgi525k" path="res://money_counter.tscn" id="10_73u6h"]
-[ext_resource type="PackedScene" uid="uid://c7p821r2eufcf" path="res://mood_counter.tscn" id="11_j3mg1"]
+[ext_resource type="PackedScene" path="res://quota_bar.tscn" id="8_e7w6y"]
+[ext_resource type="PackedScene" path="res://health_counter.tscn" id="9_tk8tq"]
+[ext_resource type="PackedScene" path="res://money_counter.tscn" id="10_73u6h"]
+[ext_resource type="PackedScene" path="res://mood_counter.tscn" id="11_j3mg1"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nyhfi"]
 size = Vector2(100, 100)
