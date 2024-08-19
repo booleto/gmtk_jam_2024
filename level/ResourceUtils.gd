@@ -60,6 +60,8 @@ func apply_penalty(penalty: CityResource):
 	resource.population = 0 if resource.population < 0 else resource.population
 	resource.money = 0 if resource.money < 0 else resource.money
 	
+	prints("______________________ CURRENT PENALTIES ______________________")
+	prints("health: ", penalty.health, " population: ", penalty.population, " mood: ", penalty.mood, " money: ", penalty.money)
 	emit_data_changes(penalty)
 
 
@@ -70,7 +72,13 @@ func _on_new_building(building : Building):
 func _on_building_effect(effect : BuildingEffect, adjs : Array[Building]):
 	#prints("new turn effect: ", effect)
 	prints("adj builds: ", adjs.map(func(b : Building) -> String: return b.building_name))
-	var changes : CityResource = effect.calc_bonus(adjs, {"turn" : get_parent().turn})
+	var args : Dictionary = {
+		"turn" : get_parent().turn,
+		"multi" : get_parent().status_manager.get_multiplier()
+	}
+	prints("with args: ", args)
+	
+	var changes : CityResource = effect.calc_bonus(adjs, args)
 	try_fulfill(changes)
 	pass
 

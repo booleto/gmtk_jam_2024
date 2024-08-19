@@ -15,6 +15,9 @@ var turn : int = 1
 
 func end_turn():
 	EventBus.turn_end_event.emit(turn)
+	var penalty = status_manager.get_penalty()
+	resource_utils.apply_penalty(penalty)
+	
 	print_current_resources()
 	prints("______________________ END OF TURN ", turn, " ______________________")
 	turn += 1
