@@ -35,6 +35,7 @@ func _ready() -> void:
 	await get_parent().ready
 	entity_manager = get_parent()
 	initialize_deck()
+	EventBus.energy_changed.emit(energy)
 
 func _get(property: StringName) -> Variant:
 	if property.ends_with("Starters"):
@@ -85,6 +86,10 @@ func initialize_deck(): # TODO: remove placeholder
 func play_card(index: int, discard: bool = false) -> bool:
 	if index < 0 or index >= hand_limit:
 		return false
+	if hand[index].energy_cost > energy:
+		EventBus.not_enough_energy.emit()
+		return false
+	
 	var result = hand[index].effect.execute(entity_manager)
 	if result:
 		var played_card: Card = hand.pop_at(index)
@@ -92,6 +97,9 @@ func play_card(index: int, discard: bool = false) -> bool:
 		if not discard:
 			discard_pile.append(played_card)
 		card_played.emit(played_card)
+		energy -= played_card.energy_cost
+		prints("energy changed: ", energy)
+		EventBus.energy_changed.emit(energy)
 		EventBus.card_setup_event.emit(hand)
 		
 	return result

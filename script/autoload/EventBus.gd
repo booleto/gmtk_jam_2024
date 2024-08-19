@@ -13,6 +13,12 @@ signal citizen_number_changed(new_amount : int)
 signal citizen_iq_changed(new_amount : int)
 signal citizen_health_changed(new_amount : int)
 signal citizen_mood_changed(new_amount : int)
+signal energy_changed(new_amount : int)
+
+# Insufficient resources
+signal not_enough_resources
+signal not_enough_energy
+signal not_valid_building_placement
 
 signal card_play_event(card: Card)
 signal card_setup_event(hand: Array[Card])
