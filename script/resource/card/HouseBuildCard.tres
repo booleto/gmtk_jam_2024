@@ -14,5 +14,6 @@ card_name = "Build House"
 energy_cost = 2
 type = 0
 effect = SubResource("Resource_mafgi")
+discard = false
 frame = 0
 tooltip = "Builds a House"

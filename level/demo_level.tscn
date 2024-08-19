@@ -66,4 +66,6 @@ energy = 30
 "Build School Starters" = 1
 "Build Supermarket Starters" = 1
 
+[node name="StatusManager" type="Node" parent="EntityManager"]
+
 [connection signal="building_built" from="EntityManager/BuildUtils" to="EntityManager" method="_on_build_utils_building_built"]

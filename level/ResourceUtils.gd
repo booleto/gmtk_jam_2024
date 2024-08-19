@@ -44,20 +44,23 @@ func try_fulfill(request: CityResource) -> bool:
 	resource.health -= request.health
 	resource.money -= request.money
 	
-	if request.population != 0:
-		EventBus.citizen_number_changed.emit(resource.population)
-		print("population changed: ", resource.population)
-	if request.mood != 0:
-		EventBus.citizen_mood_changed.emit(resource.mood)
-		print("mood changed: ", resource.mood)
-	if request.health != 0:
-		EventBus.citizen_health_changed.emit(resource.health)
-		print("health changed: ", resource.health)
-	if request.money != 0:
-		EventBus.money_changed.emit(resource.money)
-		print("money changed: ", resource.money)
+	emit_data_changes(request)
 		
 	return true
+
+
+func apply_penalty(penalty: CityResource):
+	resource.health -= penalty.health
+	resource.mood -= penalty.mood
+	resource.population -= penalty.population
+	resource.money -= penalty.money
+	
+	resource.health = 0 if resource.health < 0 else resource.health
+	resource.mood = 0 if resource.mood < 0 else resource.mood
+	resource.population = 0 if resource.population < 0 else resource.population
+	resource.money = 0 if resource.money < 0 else resource.money
+	
+	emit_data_changes(penalty)
 
 
 func _on_new_building(building : Building):
@@ -70,3 +73,18 @@ func _on_building_effect(effect : BuildingEffect, adjs : Array[Building]):
 	var changes : CityResource = effect.calc_bonus(adjs, {"turn" : get_parent().turn})
 	try_fulfill(changes)
 	pass
+
+
+func emit_data_changes(request: CityResource) -> void:
+	if request.population != 0:
+		EventBus.citizen_number_changed.emit(resource.population)
+		print("population changed: ", resource.population)
+	if request.mood != 0:
+		EventBus.citizen_mood_changed.emit(resource.mood)
+		print("mood changed: ", resource.mood)
+	if request.health != 0:
+		EventBus.citizen_health_changed.emit(resource.health)
+		print("health changed: ", resource.health)
+	if request.money != 0:
+		EventBus.money_changed.emit(resource.money)
+		print("money changed: ", resource.money)

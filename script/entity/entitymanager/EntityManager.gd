@@ -4,6 +4,7 @@ class_name EntityManager
 @onready var build_utils: BuildUtils = $BuildUtils
 @onready var resource_utils: ResourceUtils = $ResourceUtils
 @onready var card_manager: CardManager = $CardManager
+@onready var status_manager: StatusManager = $StatusManager
 @onready var camera: Camera2D = $Camera2D
 
 func _ready():
