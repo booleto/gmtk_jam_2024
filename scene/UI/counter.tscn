@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkduq0y7ojmpu"]
+[gd_scene load_steps=2 format=3 uid="uid://b3ghwdb32esb5"]
 
 [ext_resource type="Texture2D" uid="uid://dlcjxhrf15mm5" path="res://Assets/Sprites/label_bg.png" id="1_rfupn"]
-[ext_resource type="Texture2D" path="res://R.png" id="2_cffdn"]
 
 [node name="NinePatchRect" type="NinePatchRect"]
 offset_right = 130.0
@@ -38,4 +37,3 @@ offset_top = -16.0
 offset_right = 41.0
 offset_bottom = 16.0
 grow_vertical = 2
-texture = ExtResource("2_cffdn")
