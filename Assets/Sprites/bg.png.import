@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cogo1l4d4k1gn"
-path="res://.godot/imported/happiness.png-09ef57d33a9542ae5c36d21275b0555d.ctex"
+uid="uid://cyvh0lsy0q4xy"
+path="res://.godot/imported/bg.png-97ab775e70e5c86bc7673d60b12b291d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://happiness.png"
-dest_files=["res://.godot/imported/happiness.png-09ef57d33a9542ae5c36d21275b0555d.ctex"]
+source_file="res://Assets/Sprites/bg.png"
+dest_files=["res://.godot/imported/bg.png-97ab775e70e5c86bc7673d60b12b291d.ctex"]
 
 [params]
 
