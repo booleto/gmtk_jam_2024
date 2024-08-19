@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://bw868i505l1d5" path="res://script/resource/card/MarketBuildCard.tres" id="5_ov6sb"]
 [ext_resource type="Resource" uid="uid://bmcrl3nexwj7d" path="res://script/resource/card/SchoolBuildCard.tres" id="6_xdv65"]
 [ext_resource type="PackedScene" path="res://quota_bar.tscn" id="8_e7w6y"]
-[ext_resource type="PackedScene" path="res://health_counter.tscn" id="9_tk8tq"]
+[ext_resource type="PackedScene" uid="uid://curllkmudtc8o" path="res://health_counter.tscn" id="9_tk8tq"]
 [ext_resource type="PackedScene" path="res://money_counter.tscn" id="10_73u6h"]
 [ext_resource type="PackedScene" path="res://mood_counter.tscn" id="11_j3mg1"]
 

@@ -4,6 +4,7 @@ class_name EntityManager
 @onready var build_utils: BuildUtils = $BuildUtils
 @onready var resource_utils: ResourceUtils = $ResourceUtils
 @onready var card_manager: CardManager = $CardManager
+@onready var status_manager: StatusManager = $StatusManager
 @onready var camera: Camera2D = $Camera2D
 
 func _ready():
@@ -14,6 +15,9 @@ var turn : int = 1
 
 func end_turn():
 	EventBus.turn_end_event.emit(turn)
+	var penalty = status_manager.get_penalty()
+	resource_utils.apply_penalty(penalty)
+	
 	print_current_resources()
 	prints("______________________ END OF TURN ", turn, " ______________________")
 	turn += 1
@@ -26,10 +30,23 @@ func resume_game():
 	
 func purchase_new_building(position: Vector2, building : BuildingData) -> bool:
 	if not resource_utils.able_to_fulfill(building.cost):
+		EventBus.not_enough_resources.emit()
+		return false
+		
+	if build_utils.place_building_global(position, building):
+		resource_utils.try_fulfill(building.cost)
+		return true
+	else:
+		EventBus.not_valid_building_placement.emit()
 		return false
 	
-	resource_utils.try_fulfill(building.cost)
-	return build_utils.place_building_global(position, building)
+	
+func get_city_resource() -> CityResource:
+	return resource_utils.resource
+
+
+func get_energy() -> int:
+	return card_manager.energy
 
 
 func print_current_resources():
@@ -39,7 +56,8 @@ func print_current_resources():
 
 
 func play_card_in_hand(index: int) -> bool:
-	if card_manager.play_card(index):
+	var card_success = card_manager.play_card(index)
+	if card_success:
 		card_manager.print_hand()
 		end_turn()
 		return true

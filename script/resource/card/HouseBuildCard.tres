@@ -11,8 +11,9 @@ building = ExtResource("1_g624s")
 [resource]
 script = ExtResource("3_fe8k3")
 card_name = "Build House"
-energy_cost = 0
+energy_cost = 2
 type = 0
 effect = SubResource("Resource_mafgi")
+discard = false
 frame = 0
 tooltip = "Builds a House"
