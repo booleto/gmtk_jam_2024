@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Card" load_steps=5 format=3 uid="uid://bua6jbqan1hqx"]
 
-[ext_resource type="Resource" uid="uid://c0860qfw0p68d" path="res://script/resource/building/SupermarketData.tres" id="1_f6su6"]
+[ext_resource type="Resource" uid="uid://b5uo4lkmeyaaw" path="res://script/resource/building/SupermarketData.tres" id="1_f6su6"]
 [ext_resource type="Script" path="res://script/resource/card/cardeffect/BuildEffect.gd" id="2_2xoy5"]
 [ext_resource type="Script" path="res://script/resource/card/Card.gd" id="3_qgft2"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c3dmp6ktllqnl"]
+[gd_scene load_steps=13 format=3 uid="uid://44svy830gp8r"]
 
 [ext_resource type="PackedScene" uid="uid://dqajhmc3raw2" path="res://scene/UI/card/CardUI.tscn" id="1_2sddq"]
 [ext_resource type="Script" path="res://script/component/cardcontainer/CardContainer.gd" id="1_g246s"]
@@ -7,13 +7,11 @@
 [ext_resource type="Resource" uid="uid://cmaqq4j2oxkyt" path="res://script/resource/card/HouseBuildCard.tres" id="4_xs47m"]
 [ext_resource type="Resource" uid="uid://bw868i505l1d5" path="res://script/resource/card/MarketBuildCard.tres" id="5_ov6sb"]
 [ext_resource type="Resource" uid="uid://bmcrl3nexwj7d" path="res://script/resource/card/SchoolBuildCard.tres" id="6_xdv65"]
-[ext_resource type="PackedScene" path="res://quota_bar.tscn" id="8_e7w6y"]
-[ext_resource type="PackedScene" uid="uid://curllkmudtc8o" path="res://health_counter.tscn" id="9_tk8tq"]
-[ext_resource type="PackedScene" path="res://money_counter.tscn" id="10_73u6h"]
-[ext_resource type="PackedScene" path="res://mood_counter.tscn" id="11_j3mg1"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nyhfi"]
-size = Vector2(100, 100)
+[ext_resource type="PackedScene" uid="uid://b607dlhlybciu" path="res://scene/UI/quota_bar.tscn" id="8_e7w6y"]
+[ext_resource type="Texture2D" uid="uid://bfo0v42xcde5i" path="res://Assets/Sprites/calendar-icon-clipart-design-illustration-free-png.png" id="8_msfvo"]
+[ext_resource type="PackedScene" uid="uid://dq6641rudbief" path="res://scene/UI/health_counter.tscn" id="9_tk8tq"]
+[ext_resource type="PackedScene" uid="uid://dfae5xrgi525k" path="res://scene/UI/money_counter.tscn" id="10_73u6h"]
+[ext_resource type="PackedScene" uid="uid://c7p821r2eufcf" path="res://scene/UI/mood_counter.tscn" id="11_j3mg1"]
 
 [node name="UI" type="CanvasLayer"]
 
@@ -61,10 +59,10 @@ layout_mode = 2
 card = ExtResource("6_xdv65")
 
 [node name="Turns" type="MarginContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_constants/margin_left = 100
-theme_override_constants/margin_top = 100
+offset_right = 170.0
+offset_bottom = 178.0
+theme_override_constants/margin_left = 70
+theme_override_constants/margin_top = 70
 
 [node name="VSplitContainer" type="VSplitContainer" parent="Turns"]
 layout_mode = 2
@@ -72,12 +70,20 @@ layout_mode = 2
 [node name="CenterContainer" type="CenterContainer" parent="Turns/VSplitContainer"]
 layout_mode = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="Turns/VSplitContainer/CenterContainer"]
-texture = SubResource("PlaceholderTexture2D_nyhfi")
+[node name="Calendar-icon-clipart-design-illustration-free-png" type="Sprite2D" parent="Turns/VSplitContainer/CenterContainer"]
+position = Vector2(49, 26)
+texture = ExtResource("8_msfvo")
 
-[node name="Energy" type="TextureProgressBar" parent="Turns/VSplitContainer"]
+[node name="Label" type="Label" parent="Turns/VSplitContainer/CenterContainer"]
 layout_mode = 2
-stretch_margin_left = 7
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "70"
+
+[node name="Energy" type="ProgressBar" parent="Turns/VSplitContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+value = 10.0
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 anchors_preset = 2

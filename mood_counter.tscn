@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7p821r2eufcf"]
-
-[ext_resource type="PackedScene" uid="uid://dkduq0y7ojmpu" path="res://counter.tscn" id="1_oyrry"]
-[ext_resource type="Texture2D" uid="uid://cogo1l4d4k1gn" path="res://happiness.png" id="2_tyoid"]
-
-[node name="NinePatchRect" instance=ExtResource("1_oyrry")]
-
-[node name="TextureRect" parent="." index="1"]
-texture = ExtResource("2_tyoid")
