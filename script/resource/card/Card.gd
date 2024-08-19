@@ -10,6 +10,7 @@ enum CardFrame {HOUSE, HOSPITAL, MARKET, SUPERMARKET, SCHOOL, COMPANY, LOCAL_EVE
 @export var type : CardType
 @export var effect : CardEffect
 #@export var cost: int
+@export var discard : bool
 
 @export var frame : CardFrame
 @export_multiline var tooltip : String

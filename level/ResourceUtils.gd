@@ -8,6 +8,11 @@ class_name ResourceUtils
 func _ready() -> void:
 	await get_parent().ready
 	build_utils.building_built.connect(_on_new_building)
+	EventBus.citizen_number_changed.emit(resource.population)
+	EventBus.citizen_mood_changed.emit(resource.mood)
+	EventBus.citizen_health_changed.emit(resource.health)
+	EventBus.money_changed.emit(resource.money)
+
 
 ## Change the population by an amount (positive or negative)
 ## Warning: this can make the population went negative

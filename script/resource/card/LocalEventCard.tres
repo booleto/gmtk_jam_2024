@@ -12,5 +12,6 @@ card_name = "Local Festival"
 energy_cost = 2
 type = 1
 effect = SubResource("Resource_ctkvs")
+discard = true
 frame = 6
 tooltip = "Local Event"

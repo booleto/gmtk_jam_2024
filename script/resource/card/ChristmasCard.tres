@@ -12,5 +12,6 @@ card_name = "Christmas Event"
 energy_cost = 4
 type = 1
 effect = SubResource("Resource_ctkvs")
+discard = true
 frame = 7
 tooltip = "Chrismas Event"
