@@ -19,7 +19,6 @@ func load_card_data(card: Card):
 func _on_mouse_entered() -> void:
 	#print("playing animation")
 	animation_player.play("inspect")
-	pass # Replace with function body.
 
 #func _gui_input(event: InputEvent) -> void:
 	#print(event)
@@ -27,5 +26,8 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	#print("reset animation")
-	animation_player.play_backwards("inspect")
-	pass # Replace with function body.
+	if animation_player.is_playing():
+		animation_player.pause()
+		animation_player.play("inspect", -1, -1)
+	else:
+		animation_player.play_backwards("inspect")
