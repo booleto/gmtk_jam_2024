@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://script/resource/CityResource.gd" id="1_rq7qf"]
 [ext_resource type="Script" path="res://script/entity/building/effect/SupermarketEffect.gd" id="2_gu8nn"]
-[ext_resource type="PackedScene" path="res://scene/entity/Supermarket.tscn" id="3_x4nky"]
+[ext_resource type="PackedScene" uid="uid://d1k82lwnucds" path="res://scene/entity/Supermarket.tscn" id="3_x4nky"]
 [ext_resource type="Script" path="res://script/resource/building/BuildingData.gd" id="4_2w11m"]
 [ext_resource type="Texture2D" uid="uid://bkjth8s6b151r" path="res://Assets/Sprites/Marketbig.png" id="5_4neqs"]
 
