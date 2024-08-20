@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Card" load_steps=5 format=3 uid="uid://ifgksydx3uxg"]
+
+[ext_resource type="Resource" uid="uid://bsj22j8mmfmyl" path="res://script/resource/building/PubData.tres" id="1_4yeux"]
+[ext_resource type="Script" path="res://script/resource/card/cardeffect/BuildEffect.gd" id="2_fj5mm"]
+[ext_resource type="Script" path="res://script/resource/card/Card.gd" id="3_plwo6"]
+
+[sub_resource type="Resource" id="Resource_mafgi"]
+script = ExtResource("2_fj5mm")
+building = ExtResource("1_4yeux")
+
+[resource]
+script = ExtResource("3_plwo6")
+card_name = "Build Pub"
+energy_cost = 2
+type = 0
+effect = SubResource("Resource_mafgi")
+discard = true
+frame = 8
+tooltip = "Builds a Pub"

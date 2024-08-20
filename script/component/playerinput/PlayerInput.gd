@@ -36,6 +36,9 @@ func _process(delta: float) -> void:
 	for key in input_index.keys():
 		if Input.is_action_just_pressed(key):
 			entity_manager.play_card_in_hand(input_index[key])
+	
+	if Input.is_action_just_pressed("skip_turn"):
+		trigger_turn_end()
 
 
 func trigger_turn_end():

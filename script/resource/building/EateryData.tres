@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="BuildingData" load_steps=8 format=3 uid="uid://c5r4f845jws32"]
+
+[ext_resource type="Script" path="res://script/resource/CityResource.gd" id="1_gg0w6"]
+[ext_resource type="Script" path="res://script/entity/building/effect/BuildingEffect.gd" id="2_l1v76"]
+[ext_resource type="PackedScene" uid="uid://b884ur1iod42x" path="res://scene/entity/Eatery.tscn" id="3_f57as"]
+[ext_resource type="Script" path="res://script/resource/building/BuildingData.gd" id="4_rpyhi"]
+[ext_resource type="Texture2D" uid="uid://b6ni5m4u22wgq" path="res://Assets/Sprites/Eatery.png" id="5_jgm11"]
+
+[sub_resource type="Resource" id="Resource_a5h8r"]
+script = ExtResource("1_gg0w6")
+population = 0
+mood = -10
+health = 0
+money = 0
+
+[sub_resource type="Resource" id="Resource_siund"]
+script = ExtResource("2_l1v76")
+
+[resource]
+script = ExtResource("4_rpyhi")
+input_action = "card4"
+building_name = "eatery"
+sprite = ExtResource("5_jgm11")
+cost = SubResource("Resource_a5h8r")
+size = Vector2i(1, 1)
+scene = ExtResource("3_f57as")
+effect = SubResource("Resource_siund")

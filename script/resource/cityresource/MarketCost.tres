@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_6tt5u")
-population = 2
-mood = 0
+population = 0
+mood = -10
 health = 0
-money = -20
+money = 0

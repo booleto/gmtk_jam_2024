@@ -13,5 +13,5 @@ energy_cost = 4
 type = 1
 effect = SubResource("Resource_ctkvs")
 discard = true
-frame = 7
+frame = 10
 tooltip = "Chrismas Event"
