@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bjjb6h5sr06ai"]
 
 [ext_resource type="PackedScene" uid="uid://dkduq0y7ojmpu" path="res://scene/UI/counter.tscn" id="1_i4ol4"]
-[ext_resource type="Texture2D" uid="uid://clveu73v6uvsd" path="res://user-solid.png" id="2_jcb68"]
+[ext_resource type="Texture2D" uid="uid://clveu73v6uvsd" path="res://Assets/Sprites/user-solid.png" id="2_jcb68"]
 
 [node name="NinePatchRect" instance=ExtResource("1_i4ol4")]
 
