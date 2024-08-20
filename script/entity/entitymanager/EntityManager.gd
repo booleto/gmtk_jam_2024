@@ -11,6 +11,8 @@ class_name EntityManager
 func _ready():
 	camera.position = build_utils.cell_size * build_utils.grid_bounds / 2
 	EventBus.turn_end_event.emit(0)
+	resource_utils.quota_fullfilled.connect(_on_quota_finish)
+	
 
 var turn : int = 1
 
@@ -73,3 +75,11 @@ func _on_build_utils_building_built(building: Building) -> void:
 
 func spawn_text_at_mouse(text: String):
 	text_spawner.spawn_text(get_global_mouse_position(), text)
+
+func _on_quota_finish():
+	print("YAYA")
+
+func get_initial_deck(deck: Dictionary):
+	print("fuck")
+	for card: Card in deck.keys():
+		prints(card.card_name, deck[card])

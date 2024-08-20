@@ -25,6 +25,7 @@ money = 50
 [node name="UI" parent="." instance=ExtResource("1_g82vk")]
 
 [node name="EntityManager" type="Node2D" parent="."]
+unique_name_in_owner = true
 script = ExtResource("2_p2aqo")
 
 [node name="Camera2D" type="Camera2D" parent="EntityManager"]

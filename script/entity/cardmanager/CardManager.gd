@@ -17,6 +17,7 @@ var entity_manager : EntityManager
 
 var hand : Array[Card] = []
 var discard_pile : Array[Card] = []
+var initial_deck : Array[Card] = []
 var deck : Array[Card] = []
 
 var cards: Dictionary = {}

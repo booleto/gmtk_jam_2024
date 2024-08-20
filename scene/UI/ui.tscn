@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cpsr8pd756sjk" path="res://scene/UI/population_counter.tscn" id="10_o4aag"]
 [ext_resource type="Script" path="res://script/component/ui/turn_listener.gd" id="10_qk0hf"]
 [ext_resource type="PackedScene" uid="uid://me7ymdsjfk3c" path="res://scene/UI/energy_counter.tscn" id="10_tnfek"]
-[ext_resource type="PackedScene" uid="uid://chy4k1wuns103" path="res://scene/UI/goal_user_counter.tscn" id="11_hxj1e"]
+[ext_resource type="PackedScene" path="res://scene/UI/goal_user_counter.tscn" id="11_hxj1e"]
 [ext_resource type="PackedScene" uid="uid://pve64caacaso" path="res://scene/UI/mood_counter.tscn" id="11_j3mg1"]
 [ext_resource type="Texture2D" uid="uid://d0je3u2x6elik" path="res://Assets/Sprites/Skip.png" id="15_tpq0y"]
 [ext_resource type="Texture2D" uid="uid://ce2i23rln77de" path="res://Assets/Sprites/Deck 90x95.png" id="16_n2re8"]
