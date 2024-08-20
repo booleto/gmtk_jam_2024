@@ -9,7 +9,7 @@ class_name EntityManager
 
 func _ready():
 	camera.position = build_utils.cell_size * build_utils.grid_bounds / 2
-	
+	EventBus.turn_end_event.emit(0)
 
 var turn : int = 1
 

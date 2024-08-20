@@ -22,6 +22,6 @@ input_action = "card4"
 building_name = "bar"
 sprite = ExtResource("5_ar3su")
 cost = SubResource("Resource_xtucb")
-size = Vector2i(1, 1)
+size = Vector2i(2, 2)
 scene = ExtResource("3_cxsof")
 effect = SubResource("Resource_i8ypb")

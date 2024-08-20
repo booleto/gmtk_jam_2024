@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpsr8pd756sjk"]
+
+[ext_resource type="PackedScene" uid="uid://b3ghwdb32esb5" path="res://scene/UI/counter.tscn" id="1_i4ol4"]
+[ext_resource type="Texture2D" uid="uid://clveu73v6uvsd" path="res://Assets/Sprites/user-solid.png" id="2_jcb68"]
+[ext_resource type="Script" path="res://scene/UI/population_counter.gd" id="2_rru1h"]
+
+[node name="NinePatchRect" instance=ExtResource("1_i4ol4")]
+script = ExtResource("2_rru1h")
+
+[node name="TextureRect" parent="." index="1"]
+texture = ExtResource("2_jcb68")
