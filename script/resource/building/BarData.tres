@@ -1,8 +1,8 @@
-[gd_resource type="Resource" script_class="BuildingData" load_steps=8 format=3 uid="uid://c45e28ks0plb8"]
+[gd_resource type="Resource" script_class="BuildingData" load_steps=8 format=3 uid="uid://bquci6jkkxu3d"]
 
 [ext_resource type="Script" path="res://script/resource/CityResource.gd" id="1_67bud"]
 [ext_resource type="Script" path="res://script/entity/building/effect/BuildingEffect.gd" id="2_er6hb"]
-[ext_resource type="PackedScene" uid="uid://jbis3kun5kwg" path="res://scene/entity/Bar.tscn" id="3_cxsof"]
+[ext_resource type="PackedScene" path="res://scene/entity/Bar.tscn" id="3_cxsof"]
 [ext_resource type="Script" path="res://script/resource/building/BuildingData.gd" id="4_2h3cp"]
 [ext_resource type="Texture2D" uid="uid://puhxco5apcje" path="res://Assets/Sprites/Bar.png" id="5_ar3su"]
 

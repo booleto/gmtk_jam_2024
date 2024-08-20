@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://pve64caacaso"]
+[gd_scene load_steps=4 format=3 uid="uid://c7p821r2eufcf"]
 
-[ext_resource type="PackedScene" uid="uid://b3ghwdb32esb5" path="res://scene/UI/counter.tscn" id="1_oyrry"]
+[ext_resource type="PackedScene" uid="uid://dkduq0y7ojmpu" path="res://scene/UI/counter.tscn" id="1_oyrry"]
 [ext_resource type="Texture2D" uid="uid://7mxpa5bixvwv" path="res://Assets/Sprites/IconUI.png" id="2_cda4v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x66pl"]
