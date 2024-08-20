@@ -90,6 +90,7 @@ func play_card(index: int, discard: bool = false) -> bool:
 		return false
 	if hand[index].energy_cost > energy:
 		EventBus.not_enough_energy.emit()
+		entity_manager.spawn_text_at_mouse("Not enough energy!")
 		return false
 	
 	var result = hand[index].effect.execute(entity_manager)

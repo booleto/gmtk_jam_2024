@@ -6,6 +6,7 @@ class_name EntityManager
 @onready var card_manager: CardManager = $CardManager
 @onready var status_manager: StatusManager = $StatusManager
 @onready var camera: Camera2D = $Camera2D
+@onready var text_spawner: TextSpawner = $TextSpawner
 
 func _ready():
 	camera.position = build_utils.cell_size * build_utils.grid_bounds / 2
@@ -31,12 +32,14 @@ func resume_game():
 func purchase_new_building(position: Vector2, building : BuildingData) -> bool:
 	if not resource_utils.able_to_fulfill(building.cost):
 		EventBus.not_enough_resources.emit()
+		text_spawner.spawn_text(get_global_mouse_position(), "Insufficient materials!")
 		return false
 		
 	if build_utils.place_building_global(position, building):
 		resource_utils.try_fulfill(building.cost)
 		return true
 	else:
+		text_spawner.spawn_text(get_global_mouse_position(), "Invalid placement!")
 		EventBus.not_valid_building_placement.emit()
 		return false
 	
@@ -66,3 +69,7 @@ func play_card_in_hand(index: int) -> bool:
 
 func _on_build_utils_building_built(building: Building) -> void:
 	EventBus.turn_end_event.connect(building.on_turn_end)
+
+
+func spawn_text_at_mouse(text: String):
+	text_spawner.spawn_text(get_global_mouse_position(), text)
