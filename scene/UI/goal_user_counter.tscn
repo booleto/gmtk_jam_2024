@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://chy4k1wuns103"]
+
+[ext_resource type="PackedScene" uid="uid://cs6wb1djlvevp" path="res://scene/UI/goal_counter.tscn" id="1_qlica"]
+[ext_resource type="Texture2D" uid="uid://clveu73v6uvsd" path="res://Assets/Sprites/user-solid.png" id="2_71gtr"]
+
+[node name="GoalUserCounter" instance=ExtResource("1_qlica")]
+custom_minimum_size = Vector2(81, 36)
+
+[node name="TextureRect" parent="." index="1"]
+texture = ExtResource("2_71gtr")

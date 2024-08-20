@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs6wb1djlvevp"]
+
+[ext_resource type="Texture2D" uid="uid://dlcjxhrf15mm5" path="res://Assets/Sprites/label_bg.png" id="1_8i2x1"]
+[ext_resource type="FontFile" uid="uid://bp5p3ye7g5npc" path="res://Assets/Fonts/PIXELADE.ttf" id="2_sw14s"]
+
+[node name="NinePatchRect" type="NinePatchRect"]
+offset_right = 81.0
+offset_bottom = 36.0
+texture = ExtResource("1_8i2x1")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -16.0
+offset_bottom = 16.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_sw14s")
+theme_override_font_sizes/font_size = 25
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -16.0
+offset_right = 41.0
+offset_bottom = 16.0
+grow_vertical = 2
