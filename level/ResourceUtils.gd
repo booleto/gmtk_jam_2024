@@ -8,6 +8,7 @@ class_name ResourceUtils
 func _ready() -> void:
 	await get_parent().ready
 	build_utils.building_built.connect(_on_new_building)
+	emit_data_changes(resource)
 
 ## Change the population by an amount (positive or negative)
 ## Warning: this can make the population went negative
