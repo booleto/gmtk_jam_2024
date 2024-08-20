@@ -17,11 +17,13 @@ var entity_manager : EntityManager
 
 var hand : Array[Card] = []
 var discard_pile : Array[Card] = []
-var initial_deck : Array[Card] = []
 var deck : Array[Card] = []
 
 var cards: Dictionary = {}
 var card_starters: Dictionary = {}
+
+static var is_deck_init: bool = false
+static var initial_deck : Array[Card] = []
 
 func _init() -> void:
 	for data in DirAccess.get_files_at("res://script/resource/card"):

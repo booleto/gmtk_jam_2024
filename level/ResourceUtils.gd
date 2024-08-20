@@ -5,7 +5,7 @@ signal quota_fullfilled
 
 @export var build_utils : BuildUtils
 @export var resource: CityResource
-var quota : int = 80
+static var quota : int = 80
 
 # Connect building turn end signals to handler function
 func _ready() -> void:

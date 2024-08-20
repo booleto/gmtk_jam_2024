@@ -1,7 +1,8 @@
 extends Node
 
 var LEVEL : PackedScene = load("res://level/demo_level.tscn")
-var MAIN_MENU : PackedScene
+var WIN : PackedScene = load("res://scene/UI/victory_screen.tscn")
+var MAIN_MENU : PackedScene = load("res://scene/UI/main_menu.tscn")
 var CREDITS : PackedScene
 
 var current_level: int
@@ -23,11 +24,16 @@ var current_deck: Dictionary = {
 
 func reload():
 	load_scene(LEVEL)
+	
+func level_up():
+	get_tree().change_scene_to_packed(LEVEL)
+	EntityManager.level += 1
+	ResourceUtils.quota += 20
 
 func load_scene(level):
 	get_tree().change_scene_to_packed(level)
 	await get_tree().root.ready
-	inject_deck(current_deck)
+	#inject_deck(current_deck)
 	
 
 func inject_deck(deck: Dictionary):
