@@ -15,9 +15,9 @@
 [sub_resource type="Resource" id="Resource_fb7xx"]
 script = ExtResource("7_dqgsa")
 population = 10
-mood = 10
-health = 10
-money = 10
+mood = 50
+health = 50
+money = 50
 
 [node name="Level" type="Node"]
 
@@ -56,8 +56,19 @@ build_utils = NodePath("../BuildUtils")
 [node name="CardManager" type="Node" parent="EntityManager"]
 script = ExtResource("10_0c5ni")
 hand_limit = 5
-deck_size = 8
+deck_size = 11
 energy = 30
+"Build Bar Starters" = 1
+"Christmas Event Starters" = 1
+"Build Company Starters" = 1
+"Build Eatery Starters" = 1
+"Build Hospital Starters" = 1
+"Build House Starters" = 1
+"Local Festival Starters" = 1
+"Build Market Starters" = 1
+"Build Pub Starters" = 1
+"Build School Starters" = 1
+"Build Supermarket Starters" = 1
 
 [node name="StatusManager" type="Node" parent="EntityManager"]
 script = ExtResource("11_jfymx")
