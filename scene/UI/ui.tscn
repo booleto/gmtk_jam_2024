@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c3dmp6ktllqnl"]
+[gd_scene load_steps=19 format=3 uid="uid://c3dmp6ktllqnl"]
 
 [ext_resource type="PackedScene" uid="uid://dqajhmc3raw2" path="res://scene/UI/card/CardUI.tscn" id="1_2sddq"]
 [ext_resource type="Script" path="res://script/component/cardcontainer/CardContainer.gd" id="1_g246s"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cpsr8pd756sjk" path="res://scene/UI/population_counter.tscn" id="10_o4aag"]
 [ext_resource type="Script" path="res://script/component/ui/turn_listener.gd" id="10_qk0hf"]
 [ext_resource type="PackedScene" uid="uid://me7ymdsjfk3c" path="res://scene/UI/energy_counter.tscn" id="10_tnfek"]
+[ext_resource type="PackedScene" uid="uid://chy4k1wuns103" path="res://scene/UI/goal_user_counter.tscn" id="11_hxj1e"]
 [ext_resource type="PackedScene" uid="uid://pve64caacaso" path="res://scene/UI/mood_counter.tscn" id="11_j3mg1"]
 [ext_resource type="Texture2D" uid="uid://d0je3u2x6elik" path="res://Assets/Sprites/Skip.png" id="15_tpq0y"]
 [ext_resource type="Texture2D" uid="uid://ce2i23rln77de" path="res://Assets/Sprites/Deck 90x95.png" id="16_n2re8"]
@@ -82,8 +83,8 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Calendar-icon-clipart-design-illustration-free-png" type="Sprite2D" parent="Turns/PanelContainer/MarginContainer/CenterContainer/VBoxContainer"]
-position = Vector2(37, 17.5)
-scale = Vector2(1.2, 0.8375)
+position = Vector2(36.5, 17.5)
+scale = Vector2(1.0125, 0.8375)
 texture = ExtResource("8_msfvo")
 
 [node name="Label" type="Label" parent="Turns/PanelContainer/MarginContainer/CenterContainer/VBoxContainer"]
@@ -98,12 +99,29 @@ script = ExtResource("10_qk0hf")
 
 [node name="Label2" type="Label" parent="Turns/PanelContainer/MarginContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_51gsh")
 theme_override_font_sizes/font_size = 50
 text = "Goal:"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MarginContainer4" type="MarginContainer" parent="."]
+offset_left = 30.0
+offset_top = 153.0
+offset_right = 130.0
+offset_bottom = 227.0
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer4"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer4/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer4/PanelContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="GoalUserCounter" parent="MarginContainer4/PanelContainer/CenterContainer/VBoxContainer" instance=ExtResource("11_hxj1e")]
+layout_mode = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 anchors_preset = 2
