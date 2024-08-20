@@ -1,3 +1,4 @@
+
 @tool
 extends Node
 class_name CardManager
@@ -73,6 +74,7 @@ func initialize_deck(): # TODO: remove placeholder
 	for name in card_starters:
 		var card = cards[name]
 		var i = card_starters[name]
+		if i == null: continue
 		for j in range(i):
 			deck.append(card)
 	

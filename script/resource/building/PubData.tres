@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="BuildingData" load_steps=8 format=3 uid="uid://banpde3ss0hs5"]
+[gd_resource type="Resource" script_class="BuildingData" load_steps=8 format=3 uid="uid://bsj22j8mmfmyl"]
 
 [ext_resource type="Script" path="res://script/resource/CityResource.gd" id="1_vu3fe"]
 [ext_resource type="Script" path="res://script/entity/building/effect/PubEffect.gd" id="2_3nsyo"]

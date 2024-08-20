@@ -112,7 +112,8 @@ func find_adjacent_builds(pos: Vector2i) -> Array[Building]:
 		for j in range(iter_size.y):
 			var ipos = Vector2i(i + start_iter.x, j + start_iter.y)
 			if is_position_in_bounds(ipos):
-				if building_placement[ipos.x][ipos.y] != null and building_placement[ipos.x][ipos.y] not in adjs:
+				var checked_build = building_placement[ipos.x][ipos.y]
+				if checked_build != null and checked_build != build and checked_build not in adjs:
 					adjs.append(building_placement[ipos.x][ipos.y])
 	return adjs
 	

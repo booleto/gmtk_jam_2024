@@ -1,5 +1,4 @@
 [gd_scene load_steps=3 format=3 uid="uid://b3ghwdb32esb5"]
-[gd_scene load_steps=3 format=3 uid="uid://dkduq0y7ojmpu"]
 
 [ext_resource type="Texture2D" uid="uid://dlcjxhrf15mm5" path="res://Assets/Sprites/label_bg.png" id="1_rfupn"]
 [ext_resource type="FontFile" uid="uid://bp5p3ye7g5npc" path="res://Assets/Fonts/PIXELADE.ttf" id="2_q0gta"]

@@ -39,6 +39,46 @@ func try_fulfill(request: CityResource) -> bool:
 	resource.health -= request.health
 	resource.money -= request.money
 	
+	emit_data_changes(request)
+		
+	return true
+
+
+func apply_penalty(penalty: CityResource):
+	resource.health -= penalty.health
+	resource.mood -= penalty.mood
+	resource.population -= penalty.population
+	resource.money -= penalty.money
+	
+	resource.health = 0 if resource.health < 0 else resource.health
+	resource.mood = 0 if resource.mood < 0 else resource.mood
+	resource.population = 0 if resource.population < 0 else resource.population
+	resource.money = 0 if resource.money < 0 else resource.money
+	
+	prints("______________________ CURRENT PENALTIES ______________________")
+	prints("health: ", penalty.health, " population: ", penalty.population, " mood: ", penalty.mood, " money: ", penalty.money)
+	emit_data_changes(penalty)
+
+
+func _on_new_building(building : Building):
+	building.apply_effect.connect(_on_building_effect)
+	
+
+func _on_building_effect(effect : BuildingEffect, adjs : Array[Building]):
+	#prints("new turn effect: ", effect)
+	prints("adj builds: ", adjs.map(func(b : Building) -> String: return b.building_name))
+	var args : Dictionary = {
+		"turn" : get_parent().turn,
+		"multi" : get_parent().status_manager.get_multiplier()
+	}
+	prints("with args: ", args)
+	
+	var changes : CityResource = effect.calc_bonus(adjs, args)
+	try_fulfill(changes)
+	pass
+
+
+func emit_data_changes(request: CityResource) -> void:
 	if request.population != 0:
 		EventBus.citizen_number_changed.emit(resource.population)
 		print("population changed: ", resource.population)
@@ -51,17 +91,3 @@ func try_fulfill(request: CityResource) -> bool:
 	if request.money != 0:
 		EventBus.money_changed.emit(resource.money)
 		print("money changed: ", resource.money)
-		
-	return true
-
-
-func _on_new_building(building : Building):
-	building.apply_effect.connect(_on_building_effect)
-	
-
-func _on_building_effect(effect : BuildingEffect, adjs : Array[Building]):
-	#prints("new turn effect: ", effect)
-	prints("adj builds: ", adjs.map(func(b : Building) -> String: return b.building_name))
-	var changes : CityResource = effect.calc_bonus(adjs, {"turn" : get_parent().turn})
-	try_fulfill(changes)
-	pass
