@@ -39,6 +39,9 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("skip_turn"):
 		trigger_turn_end()
+		
+	if Input.is_action_just_pressed("restart"):
+		LevelLoader.reload()
 
 
 func trigger_turn_end():

@@ -1,8 +1,11 @@
 extends Node
 class_name ResourceUtils
 
+signal quota_fullfilled
+
 @export var build_utils : BuildUtils
 @export var resource: CityResource
+var quota : int = 80
 
 # Connect building turn end signals to handler function
 func _ready() -> void:
@@ -41,7 +44,8 @@ func try_fulfill(request: CityResource) -> bool:
 	resource.money -= request.money
 	
 	emit_data_changes(request)
-		
+	if resource.population > quota:
+		quota_fullfilled.emit()
 	return true
 
 
@@ -59,6 +63,8 @@ func apply_penalty(penalty: CityResource):
 	prints("______________________ CURRENT PENALTIES ______________________")
 	prints("health: ", penalty.health, " population: ", penalty.population, " mood: ", penalty.mood, " money: ", penalty.money)
 	emit_data_changes(penalty)
+	if resource.population > quota:
+		quota_fullfilled.emit()
 
 
 func _on_new_building(building : Building):

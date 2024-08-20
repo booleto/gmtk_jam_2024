@@ -16,4 +16,6 @@ type = 0
 effect = SubResource("Resource_mafgi")
 discard = true
 frame = 7
-tooltip = "Builds a Bar"
+tooltip = "Builds a Bar
+
+"
