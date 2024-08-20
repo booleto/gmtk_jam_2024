@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfo0v42xcde5i"
-path="res://.godot/imported/calendar-icon-clipart-design-illustration-free-png.png-1c81335bb1c69f30dfd89886363f1095.ctex"
+uid="uid://on6i2ea3ou25"
+path="res://.godot/imported/Calendar.png-a5ea978b7f2243019337a580c0a4f382.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/calendar-icon-clipart-design-illustration-free-png.png"
-dest_files=["res://.godot/imported/calendar-icon-clipart-design-illustration-free-png.png-1c81335bb1c69f30dfd89886363f1095.ctex"]
+source_file="res://Assets/Sprites/Calendar.png"
+dest_files=["res://.godot/imported/Calendar.png-a5ea978b7f2243019337a580c0a4f382.ctex"]
 
 [params]
 
