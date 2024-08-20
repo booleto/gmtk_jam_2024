@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c3dmp6ktllqnl"]
+[gd_scene load_steps=17 format=3 uid="uid://44svy830gp8r"]
 
 [ext_resource type="PackedScene" uid="uid://dqajhmc3raw2" path="res://scene/UI/card/CardUI.tscn" id="1_2sddq"]
 [ext_resource type="Script" path="res://script/component/cardcontainer/CardContainer.gd" id="1_g246s"]
@@ -9,11 +9,11 @@
 [ext_resource type="Resource" uid="uid://bmcrl3nexwj7d" path="res://script/resource/card/SchoolBuildCard.tres" id="6_xdv65"]
 [ext_resource type="Texture2D" uid="uid://bfo0v42xcde5i" path="res://Assets/Sprites/calendar-icon-clipart-design-illustration-free-png.png" id="8_msfvo"]
 [ext_resource type="FontFile" uid="uid://bp5p3ye7g5npc" path="res://Assets/Fonts/PIXELADE.ttf" id="9_51gsh"]
-[ext_resource type="PackedScene" uid="uid://bci0g1vd2ys5e" path="res://scene/UI/health_counter.tscn" id="9_tk8tq"]
-[ext_resource type="PackedScene" uid="uid://ciesvmryp3kgw" path="res://scene/UI/money_counter.tscn" id="10_73u6h"]
-[ext_resource type="PackedScene" path="res://scene/UI/population_counter.tscn" id="10_o4aag"]
-[ext_resource type="PackedScene" path="res://scene/UI/energy_counter.tscn" id="10_tnfek"]
-[ext_resource type="PackedScene" uid="uid://pve64caacaso" path="res://scene/UI/mood_counter.tscn" id="11_j3mg1"]
+[ext_resource type="PackedScene" uid="uid://dq6641rudbief" path="res://scene/UI/health_counter.tscn" id="9_tk8tq"]
+[ext_resource type="PackedScene" uid="uid://dfae5xrgi525k" path="res://scene/UI/money_counter.tscn" id="10_73u6h"]
+[ext_resource type="PackedScene" uid="uid://bjjb6h5sr06ai" path="res://scene/UI/population_counter.tscn" id="10_o4aag"]
+[ext_resource type="PackedScene" uid="uid://cir5q3yfcdkm" path="res://scene/UI/energy_counter.tscn" id="10_tnfek"]
+[ext_resource type="PackedScene" uid="uid://c7p821r2eufcf" path="res://scene/UI/mood_counter.tscn" id="11_j3mg1"]
 [ext_resource type="Texture2D" uid="uid://d0je3u2x6elik" path="res://Assets/Sprites/Skip.png" id="15_tpq0y"]
 [ext_resource type="Texture2D" uid="uid://ce2i23rln77de" path="res://Assets/Sprites/Deck 90x95.png" id="16_n2re8"]
 

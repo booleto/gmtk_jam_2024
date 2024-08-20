@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="Card" load_steps=5 format=3 uid="uid://ifgksydx3uxg"]
+[gd_resource type="Resource" script_class="Card" load_steps=5 format=3 uid="uid://dtk5dcwj5775g"]
 
-[ext_resource type="Resource" uid="uid://bsj22j8mmfmyl" path="res://script/resource/building/PubData.tres" id="1_4yeux"]
+[ext_resource type="Resource" uid="uid://banpde3ss0hs5" path="res://script/resource/building/PubData.tres" id="1_4yeux"]
 [ext_resource type="Script" path="res://script/resource/card/cardeffect/BuildEffect.gd" id="2_fj5mm"]
 [ext_resource type="Script" path="res://script/resource/card/Card.gd" id="3_plwo6"]
 
