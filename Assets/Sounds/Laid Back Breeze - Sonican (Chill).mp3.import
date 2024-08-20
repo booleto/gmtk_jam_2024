@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dhyo0jut6qnt0"
+path="res://.godot/imported/Laid Back Breeze - Sonican (Chill).mp3-d867fe66fec8edb6e2720e78eae7767d.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Laid Back Breeze - Sonican (Chill).mp3"
+dest_files=["res://.godot/imported/Laid Back Breeze - Sonican (Chill).mp3-d867fe66fec8edb6e2720e78eae7767d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
