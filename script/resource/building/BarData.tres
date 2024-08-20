@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="BuildingData" load_steps=8 format=3 uid="uid://bquci6jkkxu3d"]
+[gd_resource type="Resource" script_class="BuildingData" load_steps=8 format=3 uid="uid://c45e28ks0plb8"]
 
 [ext_resource type="Script" path="res://script/resource/CityResource.gd" id="1_67bud"]
 [ext_resource type="Script" path="res://script/entity/building/effect/BarEffect.gd" id="2_cuc8w"]
@@ -22,6 +22,6 @@ input_action = "card4"
 building_name = "bar"
 sprite = ExtResource("5_ar3su")
 cost = SubResource("Resource_xtucb")
-size = Vector2i(1, 1)
+size = Vector2i(2, 2)
 scene = ExtResource("3_cxsof")
 effect = SubResource("Resource_i8ypb")

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="BuildingData" load_steps=8 format=3 uid="uid://wu6rfplqqmtp"]
+[gd_resource type="Resource" script_class="BuildingData" load_steps=8 format=3 uid="uid://c5r4f845jws32"]
 
 [ext_resource type="Script" path="res://script/resource/CityResource.gd" id="1_gg0w6"]
 [ext_resource type="Script" path="res://script/entity/building/effect/EateryEffect.gd" id="2_3f4xr"]
@@ -22,6 +22,6 @@ input_action = "card4"
 building_name = "eatery"
 sprite = ExtResource("5_jgm11")
 cost = SubResource("Resource_a5h8r")
-size = Vector2i(1, 1)
+size = Vector2i(2, 2)
 scene = ExtResource("3_f57as")
 effect = SubResource("Resource_vvyh4")
