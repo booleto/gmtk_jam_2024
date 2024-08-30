@@ -42,7 +42,9 @@ project/assembly_name="citybuilder"
 folder_colors={
 "res://Assets/": "red",
 "res://level/": "orange",
-"res://scene/": "yellow"
+"res://resource/": "yellow",
+"res://scene/": "green",
+"res://script/": "blue"
 }
 
 [input]

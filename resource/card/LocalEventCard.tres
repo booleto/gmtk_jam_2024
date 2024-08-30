@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Card" load_steps=4 format=3 uid="uid://y8ngfhkdmex1"]
 
-[ext_resource type="Script" path="res://script/resource/card/cardeffect/ChristmasEffect.gd" id="1_d5omr"]
+[ext_resource type="Script" path="res://script/resource/card/effect/ChristmasEffect.gd" id="1_d5omr"]
 [ext_resource type="Script" path="res://script/resource/card/Card.gd" id="2_lxt6k"]
 
 [sub_resource type="Resource" id="Resource_ctkvs"]

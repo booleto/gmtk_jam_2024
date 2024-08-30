@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=5 format=3 uid="uid://cdmkpv3q7p1cb"]
 
 [ext_resource type="Resource" uid="uid://c5r4f845jws32" path="res://script/resource/building/EateryData.tres" id="1_74ko7"]
-[ext_resource type="Script" path="res://script/resource/card/cardeffect/BuildEffect.gd" id="2_indhj"]
+[ext_resource type="Script" path="res://script/resource/card/effect/BuildEffect.gd" id="2_indhj"]
 [ext_resource type="Script" path="res://script/resource/card/Card.gd" id="3_vp3db"]
 
 [sub_resource type="Resource" id="Resource_mafgi"]
