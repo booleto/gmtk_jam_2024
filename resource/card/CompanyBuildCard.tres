@@ -1,15 +1,15 @@
 [gd_resource type="Resource" script_class="Card" load_steps=5 format=3 uid="uid://bbxttghfa3pmx"]
 
-[ext_resource type="Resource" uid="uid://ir6vk1und44s" path="res://script/resource/building/CompanyData.tres" id="1_dqoye"]
-[ext_resource type="Script" path="res://script/resource/card/effect/BuildEffect.gd" id="2_23xmi"]
-[ext_resource type="Script" path="res://script/resource/card/Card.gd" id="3_1l1ru"]
+[ext_resource type="Resource" uid="uid://v4pjil74nxio" path="res://resource/building/CompanyData.tres" id="1_rxmmn"]
+[ext_resource type="Script" path="res://script/resource/card/effect/BuildEffect.gd" id="2_cotmu"]
+[ext_resource type="Script" path="res://script/resource/card/Card.gd" id="3_p13eb"]
 
 [sub_resource type="Resource" id="Resource_mafgi"]
-script = ExtResource("2_23xmi")
-building = ExtResource("1_dqoye")
+script = ExtResource("2_cotmu")
+building = ExtResource("1_rxmmn")
 
 [resource]
-script = ExtResource("3_1l1ru")
+script = ExtResource("3_p13eb")
 card_name = "Build Company"
 energy_cost = 4
 type = 0

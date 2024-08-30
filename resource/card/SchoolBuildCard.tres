@@ -1,15 +1,15 @@
 [gd_resource type="Resource" script_class="Card" load_steps=5 format=3 uid="uid://bmcrl3nexwj7d"]
 
-[ext_resource type="Resource" uid="uid://baa6wslwphhnu" path="res://script/resource/building/SchoolData.tres" id="1_hg2gq"]
-[ext_resource type="Script" path="res://script/resource/card/effect/BuildEffect.gd" id="2_1yimv"]
-[ext_resource type="Script" path="res://script/resource/card/Card.gd" id="3_rujui"]
+[ext_resource type="Resource" uid="uid://baa6wslwphhnu" path="res://resource/building/SchoolData.tres" id="1_raqu1"]
+[ext_resource type="Script" path="res://script/resource/card/effect/BuildEffect.gd" id="2_2rvye"]
+[ext_resource type="Script" path="res://script/resource/card/Card.gd" id="3_kj2ug"]
 
 [sub_resource type="Resource" id="Resource_mafgi"]
-script = ExtResource("2_1yimv")
-building = ExtResource("1_hg2gq")
+script = ExtResource("2_2rvye")
+building = ExtResource("1_raqu1")
 
 [resource]
-script = ExtResource("3_rujui")
+script = ExtResource("3_kj2ug")
 card_name = "Build School"
 energy_cost = 6
 type = 0

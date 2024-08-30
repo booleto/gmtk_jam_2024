@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="BuildingData" load_steps=8 format=3 uid="uid://c5r4f845jws32"]
+[gd_resource type="Resource" script_class="BuildingData" load_steps=8 format=3 uid="uid://cp2ej0lllc0oa"]
 
 [ext_resource type="Script" path="res://script/resource/CityResource.gd" id="1_gg0w6"]
 [ext_resource type="Script" path="res://script/entity/building/effect/EateryEffect.gd" id="2_3f4xr"]

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="BuildingData" load_steps=7 format=3 uid="uid://ir6vk1und44s"]
+[gd_resource type="Resource" script_class="BuildingData" load_steps=7 format=3 uid="uid://v4pjil74nxio"]
 
 [ext_resource type="Resource" uid="uid://dhh2q8q4wono5" path="res://script/resource/cityresource/CompanyCost.tres" id="1_jiuei"]
 [ext_resource type="Script" path="res://script/resource/building/BuildingData.gd" id="1_x6l2v"]

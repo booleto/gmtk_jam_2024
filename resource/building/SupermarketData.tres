@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="BuildingData" load_steps=8 format=3 uid="uid://c0860qfw0p68d"]
+[gd_resource type="Resource" script_class="BuildingData" load_steps=8 format=3 uid="uid://bl3jcj00vw7ld"]
 
 [ext_resource type="Script" path="res://script/resource/CityResource.gd" id="1_rq7qf"]
 [ext_resource type="Script" path="res://script/entity/building/effect/SupermarketEffect.gd" id="2_gu8nn"]
@@ -22,6 +22,6 @@ input_action = "card4"
 building_name = "market"
 sprite = ExtResource("5_4neqs")
 cost = SubResource("Resource_42c4r")
-size = Vector2i(2, 2)
+size = Vector2i(2, 1)
 scene = ExtResource("3_x4nky")
 effect = SubResource("Resource_p6tm5")

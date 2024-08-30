@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://script/resource/card/effect/ChristmasEffect.gd" id="1_d5omr"]
 [ext_resource type="Script" path="res://script/resource/card/Card.gd" id="2_lxt6k"]
 
-[sub_resource type="Resource" id="Resource_ctkvs"]
+[sub_resource type="Resource" id="Resource_6ql1k"]
 script = ExtResource("1_d5omr")
 
 [resource]
@@ -11,7 +11,7 @@ script = ExtResource("2_lxt6k")
 card_name = "Local Festival"
 energy_cost = 2
 type = 1
-effect = SubResource("Resource_ctkvs")
+effect = SubResource("Resource_6ql1k")
 discard = true
 frame = 9
 tooltip = "Local Event
