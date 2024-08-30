@@ -1,5 +1,5 @@
 
-@tool
+#@tool
 extends Node
 class_name CardManager
 
@@ -20,39 +20,35 @@ var discard_pile : Array[Card] = []
 var deck : Array[Card] = []
 
 var cards: Dictionary = {}
-var card_starters: Dictionary = {}
 
-static var is_deck_init: bool = false
-static var initial_deck : Array[Card] = []
 
-func _init() -> void:
-	for data in DirAccess.get_files_at("res://script/resource/card"):
-		if data.ends_with("Card.tres"):
-			var card: Card = load("res://script/resource/card/" + data)
-			cards[card.card_name] = card
+#func _init() -> void:
+	#for data in DirAccess.get_files_at("res://script/resource/card"):
+		#if data.ends_with("Card.tres"):
+			#var card: Card = load("res://script/resource/card/" + data)
+			#cards[card.card_name] = card
 
 func _ready() -> void:
-	if Engine.is_editor_hint():
-		notify_property_list_changed()
-		return
+	#if Engine.is_editor_hint():
+		#notify_property_list_changed()
+		#return
 	#_get_property_list()
 	await get_parent().ready
 	entity_manager = get_parent()
-	initialize_deck()
 	EventBus.energy_changed.emit(energy)
 
-func _get(property: StringName) -> Variant:
-	if property.ends_with("Starters"):
-		var name = property.trim_suffix(" Starters")
-		return card_starters[name]
-	return null
+#func _get(property: StringName) -> Variant:
+	#if property.ends_with("Starters"):
+		#var name = property.trim_suffix(" Starters")
+		#return card_starters[name]
+	#return null
 
-func _set(property: StringName, value: Variant) -> bool:
-	if property.ends_with("Starters"):
-		var name = property.trim_suffix(" Starters")
-		card_starters[name] = value
-		return true
-	return false
+#func _set(property: StringName, value: Variant) -> bool:
+	#if property.ends_with("Starters"):
+		#var name = property.trim_suffix(" Starters")
+		#card_starters[name] = value
+		#return true
+	#return false
 
 func _get_property_list():
 	return cards.keys().map(func (name: String) -> Dictionary:
@@ -63,22 +59,9 @@ func _get_property_list():
 		}
 	)
 
-func initialize_deck(): # TODO: remove placeholder
-	#for i in range(deck_starters[0]):
-		#deck.append(DataIndex.CARD_COMPANY)
-	#for i in range(deck_starters[1]):
-		#deck.append(DataIndex.CARD_HOSPITAL)
-	#for i in range(deck_starters[2]):
-		#deck.append(DataIndex.CARD_HOUSE)
-	#for i in range(deck_starters[3]):
-		#deck.append(DataIndex.CARD_MARKET)
-	#for i in range(deck_starters[4]):
-		#deck.append(DataIndex.CARD_SCHOOL)
-	for name in card_starters:
-		var card = cards[name]
-		var i = card_starters[name]
-		if i == null: continue
-		for j in range(i):
+func set_initial_deck(init_deck: Dictionary):
+	for card in init_deck.keys():
+		for i in range(init_deck[card]):
 			deck.append(card)
 	
 	deck.shuffle()

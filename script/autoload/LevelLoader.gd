@@ -5,7 +5,9 @@ var WIN : PackedScene = load("res://scene/UI/victory_screen.tscn")
 var MAIN_MENU : PackedScene = load("res://scene/UI/main_menu.tscn")
 var CREDITS : PackedScene
 
-var current_level: int
+var current_level: int = 0
+var current_quota: int = 80
+
 var current_deck: Dictionary = {
 	DataIndex.CARD_BAR: 1,
 	DataIndex.CARD_CHRISTMAS: 1,
@@ -20,22 +22,21 @@ var current_deck: Dictionary = {
 	DataIndex.CARD_SUPERMARKET: 1
 }
 
-#var entity_manager: EntityManager
 
 func reload():
 	load_scene(LEVEL)
 	
 func level_up():
-	get_tree().change_scene_to_packed(LEVEL)
-	EntityManager.level += 1
-	ResourceUtils.quota += 20
+	current_level += 1
+	current_quota += 20
+	for i in range(2):
+		var idx: int = randi_range(0, current_deck.size() - 1)
+		var incr_card: Card = current_deck.keys()[idx]
+		current_deck[incr_card] += 1
+		prints("updated deck size with card: ", incr_card.card_name)
+	
+	load_scene(LEVEL)
 
 func load_scene(level):
 	get_tree().change_scene_to_packed(level)
 	await get_tree().root.ready
-	#inject_deck(current_deck)
-	
-
-func inject_deck(deck: Dictionary):
-	var entity: EntityManager = get_tree().root.get_node("/root/Level/EntityManager")
-	entity.get_initial_deck(deck)

@@ -16,4 +16,6 @@ type = 0
 effect = SubResource("Resource_mafgi")
 discard = true
 frame = 8
-tooltip = "Builds a Pub"
+tooltip = "Builds a Pub
+
+ -5 money every turn, +10 happiness, x1.2 effects from nearby buildings (rounded up), -5 health every turn for every bar/pub built after the first one."

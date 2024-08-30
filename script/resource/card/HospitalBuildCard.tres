@@ -16,4 +16,6 @@ type = 0
 effect = SubResource("Resource_mafgi")
 discard = true
 frame = 1
-tooltip = "Builds a Hospital"
+tooltip = "Builds a Hospital
+
+ -4 civilians, +40 health"

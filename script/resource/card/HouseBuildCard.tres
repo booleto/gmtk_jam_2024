@@ -16,4 +16,6 @@ type = 0
 effect = SubResource("Resource_mafgi")
 discard = false
 frame = 0
-tooltip = "Builds a House"
+tooltip = "Builds a House
+
+ +5 civilians, +2 more civilians every 2 turns"

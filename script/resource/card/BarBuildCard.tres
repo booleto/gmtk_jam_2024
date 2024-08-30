@@ -18,4 +18,4 @@ discard = true
 frame = 7
 tooltip = "Builds a Bar
 
-"
+ -10 money every turn, +20 happiness, x1.3 effects from nearby buildings (rounded up), -5 health every turn for every bar/pub built after the first one."

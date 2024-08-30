@@ -13,16 +13,10 @@ func _ready():
 	EventBus.turn_end_event.emit(0)
 	resource_utils.quota_fullfilled.connect(_on_quota_finish)
 	resource_utils.resource = CityResource.new(30, 50, 50, 50)
-	
-	#for name in card_manager.card_starters:
-		#var card = card_manager.cards[name]
-		#var i = card_manager.card_starters[name]
-		#if i == null: continue
-		#for j in range(i):
-			#deck.append(card)
-	for i in range(level * 2):
-		name = card_manager.card_starters.keys().pick_random()
-		card_manager.deck.append(card_manager.cards[name])
+			
+	#for i in range(level * 2):
+		#name = card_manager.card_starters.keys().pick_random()
+		#card_manager.deck.append(card_manager.cards[name])
 	
 
 static var level: int = 1
@@ -89,12 +83,11 @@ func spawn_text_at_mouse(text: String):
 	text_spawner.spawn_text(get_global_mouse_position(), text)
 
 func _on_quota_finish():
-	#print("YAYA")
 	spawn_text_at_mouse("Quota Fullfilled")
 	await get_tree().create_timer(4).timeout
 	LevelLoader.level_up()
+	queue_free()
 
-#func get_initial_deck(deck: Dictionary):
-	#print("fuck")
-	#for card: Card in deck.keys():
-		#prints(card.card_name, deck[card])
+func set_deck(init_deck: Dictionary):
+	card_manager.set_initial_deck(init_deck)
+	

@@ -14,4 +14,6 @@ type = 1
 effect = SubResource("Resource_ctkvs")
 discard = true
 frame = 10
-tooltip = "Chrismas Event"
+tooltip = "Chrismas Event
+
+Increase civilians by 10%, +20 money, + 20 happiness"

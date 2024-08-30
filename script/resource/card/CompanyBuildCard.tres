@@ -17,4 +17,5 @@ effect = SubResource("Resource_mafgi")
 discard = false
 frame = 5
 tooltip = "Builds a Company
-"
+
+ -5 civilians, +10 money every turn, -5 happiness every turn"

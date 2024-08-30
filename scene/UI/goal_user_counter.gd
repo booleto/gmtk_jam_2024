@@ -4,4 +4,4 @@ extends NinePatchRect
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	label.text = str(ResourceUtils.quota)
+	label.text = str(LevelLoader.current_quota)

@@ -14,4 +14,6 @@ type = 1
 effect = SubResource("Resource_ctkvs")
 discard = true
 frame = 9
-tooltip = "Local Event"
+tooltip = "Local Event
+
+ +20 happiness, +20 health"
