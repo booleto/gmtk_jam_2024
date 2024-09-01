@@ -1,10 +1,13 @@
-[gd_resource type="Resource" script_class="BuildingData" load_steps=6 format=3 uid="uid://bp6g5fticr3s1"]
+[gd_resource type="Resource" script_class="BuildingData" load_steps=7 format=3 uid="uid://bp6g5fticr3s1"]
 
 [ext_resource type="PackedScene" uid="uid://bhnu6w1omsbwc" path="res://scene/entity/Market.tscn" id="1_6a0dn"]
 [ext_resource type="Script" path="res://script/resource/building/BuildingData.gd" id="1_705in"]
 [ext_resource type="Resource" uid="uid://5s03ieorrs3m" path="res://script/resource/cityresource/MarketCost.tres" id="1_m06md"]
-[ext_resource type="Resource" uid="uid://bxbuxmje4q25e" path="res://script/entity/building/effect/MarketEffect.tres" id="2_1bthj"]
+[ext_resource type="Script" path="res://script/entity/building/effect/MarketEffect.gd" id="2_fd5lw"]
 [ext_resource type="Texture2D" uid="uid://ctr66cgc3qhn" path="res://Assets/Sprites/Market.png" id="5_jrqth"]
+
+[sub_resource type="Resource" id="Resource_06c3r"]
+script = ExtResource("2_fd5lw")
 
 [resource]
 script = ExtResource("1_705in")
@@ -14,4 +17,4 @@ sprite = ExtResource("5_jrqth")
 cost = ExtResource("1_m06md")
 size = Vector2i(1, 1)
 scene = ExtResource("1_6a0dn")
-effect = ExtResource("2_1bthj")
+effect = SubResource("Resource_06c3r")

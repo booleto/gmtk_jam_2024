@@ -13,7 +13,7 @@ mood = 0
 health = 0
 money = -40
 
-[sub_resource type="Resource" id="Resource_p6tm5"]
+[sub_resource type="Resource" id="Resource_q5uxh"]
 script = ExtResource("2_gu8nn")
 
 [resource]
@@ -24,4 +24,4 @@ sprite = ExtResource("5_4neqs")
 cost = SubResource("Resource_42c4r")
 size = Vector2i(2, 1)
 scene = ExtResource("3_x4nky")
-effect = SubResource("Resource_p6tm5")
+effect = SubResource("Resource_q5uxh")

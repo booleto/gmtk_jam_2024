@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://script/entity/building/effect/CompanyEffect.gd" id="2_wr63k"]
 [ext_resource type="Texture2D" uid="uid://dktp1mayyxe5j" path="res://Assets/Sprites/VincentKompany.png" id="4_o4vwj"]
 
-[sub_resource type="Resource" id="Resource_rvmf7"]
+[sub_resource type="Resource" id="Resource_ol6xc"]
 script = ExtResource("2_wr63k")
 
 [resource]
@@ -17,4 +17,4 @@ sprite = ExtResource("4_o4vwj")
 cost = ExtResource("1_jiuei")
 size = Vector2i(2, 2)
 scene = ExtResource("1_xeeb8")
-effect = SubResource("Resource_rvmf7")
+effect = SubResource("Resource_ol6xc")

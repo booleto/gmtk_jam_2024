@@ -1,10 +1,13 @@
-[gd_resource type="Resource" script_class="BuildingData" load_steps=6 format=3 uid="uid://b2xvnmt8jlpoc"]
+[gd_resource type="Resource" script_class="BuildingData" load_steps=7 format=3 uid="uid://b2xvnmt8jlpoc"]
 
 [ext_resource type="PackedScene" uid="uid://1b5yrvdifmd7" path="res://scene/entity/Hospital.tscn" id="1_0wffr"]
 [ext_resource type="Script" path="res://script/resource/building/BuildingData.gd" id="1_l83wb"]
 [ext_resource type="Resource" uid="uid://bskt8h4h8r3he" path="res://script/resource/cityresource/HospitalCost.tres" id="1_uaksa"]
-[ext_resource type="Resource" uid="uid://ia61n1waq7tk" path="res://script/entity/building/effect/HospitalEffect.tres" id="2_qn7up"]
+[ext_resource type="Script" path="res://script/entity/building/effect/HospitalEffect.gd" id="2_83l0l"]
 [ext_resource type="Texture2D" uid="uid://bwogvwxbdw3an" path="res://Assets/Sprites/Hospital.png" id="4_7qmay"]
+
+[sub_resource type="Resource" id="Resource_esjiy"]
+script = ExtResource("2_83l0l")
 
 [resource]
 script = ExtResource("1_l83wb")
@@ -14,4 +17,4 @@ sprite = ExtResource("4_7qmay")
 cost = ExtResource("1_uaksa")
 size = Vector2i(2, 1)
 scene = ExtResource("1_0wffr")
-effect = ExtResource("2_qn7up")
+effect = SubResource("Resource_esjiy")
