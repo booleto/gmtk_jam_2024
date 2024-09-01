@@ -2,14 +2,19 @@
 
 [ext_resource type="PackedScene" uid="uid://b3ghwdb32esb5" path="res://scene/UI/counter.tscn" id="1_brtd7"]
 [ext_resource type="Texture2D" uid="uid://7mxpa5bixvwv" path="res://Assets/Sprites/IconUI.png" id="2_hc35r"]
-[ext_resource type="Script" path="res://scene/UI/energy_counter.gd" id="2_i3fjn"]
+[ext_resource type="Script" path="res://script/component/counter/EventDataCounter.gd" id="2_sdjt0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wlt7i"]
 atlas = ExtResource("2_hc35r")
 region = Rect2(164, 0.941613, 23, 30.0584)
 
 [node name="EnergyCounter" instance=ExtResource("1_brtd7")]
-script = ExtResource("2_i3fjn")
+
+[node name="Label" parent="." index="0"]
+script = ExtResource("2_sdjt0")
+connected_signal = 9
+tween_speed = 30.0
+tween_max_duration = 2.0
 
 [node name="TextureRect" parent="." index="1"]
 texture = SubResource("AtlasTexture_wlt7i")

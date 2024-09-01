@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c3dmp6ktllqnl"]
+[gd_scene load_steps=19 format=3 uid="uid://c3dmp6ktllqnl"]
 
 [ext_resource type="PackedScene" uid="uid://dqajhmc3raw2" path="res://scene/UI/card/CardUI.tscn" id="1_2sddq"]
 [ext_resource type="Script" path="res://script/component/cardcontainer/CardContainer.gd" id="1_g246s"]
@@ -12,11 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://bci0g1vd2ys5e" path="res://scene/UI/health_counter.tscn" id="9_tk8tq"]
 [ext_resource type="PackedScene" uid="uid://ciesvmryp3kgw" path="res://scene/UI/money_counter.tscn" id="10_73u6h"]
 [ext_resource type="PackedScene" uid="uid://cpsr8pd756sjk" path="res://scene/UI/population_counter.tscn" id="10_o4aag"]
-[ext_resource type="Script" path="res://script/component/ui/turn_listener.gd" id="10_qk0hf"]
 [ext_resource type="PackedScene" uid="uid://me7ymdsjfk3c" path="res://scene/UI/energy_counter.tscn" id="10_tnfek"]
 [ext_resource type="PackedScene" uid="uid://b5bcyqbtwdr3g" path="res://scene/UI/goal_user_counter.tscn" id="11_hxj1e"]
 [ext_resource type="PackedScene" uid="uid://pve64caacaso" path="res://scene/UI/mood_counter.tscn" id="11_j3mg1"]
-[ext_resource type="Script" path="res://scene/UI/goal_user_counter.gd" id="12_js52s"]
+[ext_resource type="Script" path="res://script/component/counter/EventDataCounter.gd" id="14_o5gm4"]
 [ext_resource type="Texture2D" uid="uid://d0je3u2x6elik" path="res://Assets/Sprites/Skip.png" id="15_tpq0y"]
 [ext_resource type="Texture2D" uid="uid://ce2i23rln77de" path="res://Assets/Sprites/Deck 90x95.png" id="16_n2re8"]
 
@@ -96,7 +95,9 @@ theme_override_font_sizes/font_size = 50
 text = "99"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("10_qk0hf")
+script = ExtResource("14_o5gm4")
+connected_signal = 4
+tween_speed = 1.0
 
 [node name="Label2" type="Label" parent="Turns/PanelContainer/MarginContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
@@ -123,7 +124,6 @@ layout_mode = 2
 
 [node name="GoalUserCounter" parent="MarginContainer4/PanelContainer/CenterContainer/VBoxContainer" instance=ExtResource("11_hxj1e")]
 layout_mode = 2
-script = ExtResource("12_js52s")
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 anchors_preset = 2
